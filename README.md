@@ -1,37 +1,23 @@
-## Welcome to GitHub Pages
+## Science Research Symposium 2020
 
-You can use the [editor on GitHub](https://github.com/isaacm20/scires2020/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Check the [roles](https://docs.google.com/document/d/1PP5DnA3xpJdXNcqtl_UGgX0lnx0jEzRNoSOEsSMN8Vg/edit) and attend senior meetings.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+And please suggest any info I should add to the site, or make a pull request with the relevant changes.
 
-### Markdown
+### What?
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+"Science Research is a three year college course run through the University of Albany.  Students in this course pursue their scientific interests through professional level research.  This can be anything from studying psychology to carbon nanotubes.  Students also find a well-established mentor in their field to guide them through the research they decide to pursue."
 
-```markdown
-Syntax highlighted code block
+The annual symposium allows students from all grades to present the research they've conducted in their field of choice. It also gives bored seniors an excuse to make a website.
 
-# Header 1
-## Header 2
-### Header 3
+#### Resources
+[About Science Research](https://nyack-public-schools.echalksites.com/groups/15029/science/science_research)
 
-- Bulleted
-- List
+See the other [site](http://nyackscienceresearch.weebly.com/) (Mine's better because it has https:// encryption. But it has no information yet...)
 
-1. Numbered
-2. List
+[Google Class Page](https://classroom.google.com/c/NzQyOTE4MTI0MjJa)
 
-**Bold** and _Italic_ and `Code` text
+### When?
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/isaacm20/scires2020/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+July 8, probably virtual.
+See the [calendar](https://docs.google.com/document/d/1tMNQ1RAWP-syUGeMlhFb_jFJbhUs0aNJ8u5BROUtk04/edit) for various other deadlines.
