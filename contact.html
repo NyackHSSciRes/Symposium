@@ -64,6 +64,23 @@ h3 {
     text-align: left;
   }
 }
+@media screen and (max-width: 600px) {
+  .card {
+    width: 100%;
+    display: block;
+    font-size: 24px;
+    padding: 5%;
+    float: right;
+  }
+    .main {
+    width: 90%;
+    display: block;
+    margin-top: 600px;
+    font-size: 24px;
+    padding: 5%;
+    float: right;
+  }
+}
 a {
   text-decoration: none;
 }
@@ -105,12 +122,13 @@ body, html {
 body {
   font-family: "Lato", sans-serif;
 }
-.sidenav {
+.card {
   width: 240px;
   position: absolute;
+  top: 0;
   top: 220px;
   left: 20px;
-  background: #eee;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   overflow-x: hidden;
   padding: 8px;
   text-decoration: none;
@@ -118,7 +136,9 @@ body {
   display: block;
 }
 .main {
+  margin-top: -5%;
   margin-left: 250px;
+  position: absolute;
   font-size: 24px;
   padding: 5%;
   float: right;
@@ -141,7 +161,7 @@ body {
 <dic class="centered"><h1>Science Research @Nyack</div>
 </div>
 
-<div class="sidenav">
+<div class="card">
   <h4>MaryBeth Foisy</h4>
   <p>mfoisy@nyackschools.org</p>
   <p>845-353-4161</p>
