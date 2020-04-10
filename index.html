@@ -6,6 +6,7 @@
 body {
   margin: 0;
   font-family: Lato;
+  src: url(../isaacm20/LatoLatin/fonts/LatoLatin-Light.ttf") format('truetype');
   color: #4f5b66;
   font-size: 24px
 }
@@ -17,8 +18,10 @@ h3 {
 }
 .topnav {
   overflow: hidden;
-  background-color: purple;
-  background-image: linear-gradient(120deg, #00dbde, #fc00ff);
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .topnav a {
@@ -30,12 +33,19 @@ h3 {
   text-decoration: none;
   font-size: 18px;
 }
+
+.topnav a: {
+  color: #ff00ff;
+}
+
 .topnav a:hover {
   color: white;
 }
+
 .topnav a.active {
   color: white;
 }
+
 .topnav .icon {
   display: none;
 }
@@ -60,7 +70,10 @@ h3 {
     display: block;
     text-align: left;
   }
-};
+}
+a {
+  text-decoration: none;
+}
 a:link {
   color: #33cccc;
 }
@@ -73,23 +86,49 @@ a:hover {
 a:active {
   color: #0000ff;
 }
+body, html {
+  height: 100%;
+}
+.parallax {
+  background-image: linear-gradient(120deg, #00dbde, #fc00ff);
+  height: 200px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  .centered {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 </style>
 </head>
 <body>
 
-<div class="topnav" id="myTopnav">
-  <a href="#/home" class="active">Home</a>
-  <a href="#/resources">Resources</a>
-  <a href="#/competitions">Competitions</a>
-  <a href="#/contact">Contact Us</a>
+<div class="topnav">
+  <a href="#home" class="active">Home</a>
+  <a href="#resources.html">Resources</a>
+  <a href="#competitions.html">Competitions</a>
+  <a href="#contact.html">Contact Us</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
 </div>
 
+<div class="parallax">
+<div class="container">
+<dic class="centered"><h1>Science Research</div>
+</div>
 
-
-<div style="padding:40px">
+<div style="padding:5%">
   <h2>Science Research Symposium 2020</h2>
 
   <p>Check the <a href="https://docs.google.com/document/d/1PP5DnA3xpJdXNcqtl_UGgX0lnx0jEzRNoSOEsSMN8Vg/edit">roles</a> and attend senior meetings.</p>
