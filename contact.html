@@ -45,6 +45,15 @@ h2, h3, h4 {
 .topnav .icon {
   display: none;
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1em;
+  padding: 1em;
+}
+.grid-container > div {
+  text-align: left;
+}
 @media screen and (max-width: 600px) {
   .topnav a:not([class="active"]) {display: none;}
   .topnav a.icon {
@@ -64,11 +73,8 @@ h2, h3, h4 {
   }
 }
 @media screen and (max-width: 600px) {
-    .main {
-    width: 90%;
-    display: block;
-    margin-top: 25em;
-    padding: 0em 1em 1em;
+  .grid-container {
+    grid-template-columns: auto;
   }
 }
 a {
@@ -110,9 +116,6 @@ body, html {
   transform: translate(-50%, -50%);
 }
 .card {
-  position: absolute;
-  top: 15.5em;
-  left: 1em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   overflow-x: hidden;
   padding: .5em;
@@ -151,10 +154,8 @@ body, html {
   cursor: pointer;
 }
 .main {
-  margin-left: 11.5em;
   font-size: 18pt;
-  padding: 0em 1em 1em;
-  float: right;
+  margin-top: -1.5em;
 }
 </style>
 </head>
@@ -174,6 +175,19 @@ body, html {
 <dic class="centered"><h1>Science Research @Nyack</div>
 </div>
 
+<div id="Menu" class="menu">
+  <div class="menu-content">
+    <span class="close">&times;</span>
+    <p><a href="index.html">Home</a></p>
+    <p><a href="resources.html">Resources</a></p>
+    <p><a href="competitions.html">Competitions</a></p>
+    <p><a href="#contact.html" class="active">Contact Us</a></p>
+  </div>
+</div>
+
+<div class="grid-container">
+  <div>
+
 <div class="card">
   <h4>MaryBeth Foisy</h4>
   <p>mfoisy@nyackschools.org</p>
@@ -189,15 +203,8 @@ body, html {
   <p>845-353-4161</p>
 </div>
 
-<div id="Menu" class="menu">
-  <div class="menu-content">
-    <span class="close">&times;</span>
-    <p><a href="index.html">Home</a></p>
-    <p><a href="resources.html">Resources</a></p>
-    <p><a href="competitions.html">Competitions</a></p>
-    <p><a href="#contact.html" class="active">Contact Us</a></p>
   </div>
-</div>
+  <div>
 
 <div class="main">
   <h2>Are you interested in volunteering to be a professional mentor?</h2>
@@ -220,6 +227,9 @@ body, html {
   <p><b>Medicine and Health</b> - Diseases/health, dentistry, gerontology, pharmacology, pathology, ophthalmology, nutrition, dermatology, allergies, speech + hearing.</p>
   <p><b>Microbiology</b> - Bacteriology, virology, protozoology, fungi, bacterial genetics, yeast.</p>
   <p><b>Physics and Astronomy</b> – Astronomy, atoms, molecules, solids, biological physics, instrumentation and electronics, magnetics and electromagnetics, nuclear and particle physics, optics, lasers, masers, theoretical physics, theoretical or computational astronomy.</p>
+</div>
+
+  </div>
 </div>
 
 <script>
