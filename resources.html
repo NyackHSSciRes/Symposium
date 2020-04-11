@@ -108,22 +108,68 @@ body, html {
 body {
   font-family: Lato;
 }
-.column {
+.column4 {
   float: left;
   width: 25%;
-  padding: 0 10px;
+  padding: .5em;
 }
-.row {margin: 0 -5px;}
+.column2 {
+  float: left;
+  width: 50%;
+  padding: .5em;
+}
+.column3 {
+  float: right;
+  width: 33%;
+  padding: .5em;
+}
+.row {margin: 0em;}
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: .5em;
+  padding: .5em;
+}
+.grid-container > div {
+  text-align: center;
+}
 @media screen and (max-width: 600px) {
-  .column {
+  .column4 {
     width: 100%;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 1em;
+  }
+  .column2 {
+    width: 100%;
+    display: block;
+    margin-bottom: 1em;
+  }
+  .column3 {
+    width: 100%;
+    display: block;
+    margin-bottom: 1em;
+  }
+}
+@media screen and (max-width: 1000px) and (min-width: 600px) {
+  .column4 {
+    width: 50%;
+    display: block;
+    margin-bottom: 1em;
+  }
+  .column2 {
+    width: 100%;
+    display: block;
+    margin-bottom: 1em;
+  }
+  .column3 {
+    width: 100%;
+    display: block;
+    margin-bottom: 1em;
   }
 }
 .card {
@@ -135,8 +181,6 @@ body {
 }
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
 }
 .tab button {
   background-color: inherit;
@@ -144,21 +188,22 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 0.6em 0.8em;
   transition: 0.3s;
-  font-size: 17px;
+  font-size: 18pt;
+  color: #33cccc;
 }
 .tab button:hover {
-  background-color: #ddd;
+  color: #ff00ff;
 }
 .tab button.active {
-  background-color: #ccc;
+  color: #0000ff;
 }
 .tabcontent {
   display: none;
   padding: 6px 12px;
   border: 1px solid #ccc;
-  border-top: none;
+  font-size: 18pt;
 }
 .menu {
   display: none;
@@ -228,10 +273,10 @@ body {
 
   <p>All of these can be found on the <a href="https://nyack-public-schools.echalksites.com/groups/15029/science/science_research">Nyackschools website</a>, but mine are nicer.</p>
 
-  <h3 id="Commonly Used">Commonly Used</h3>
+  <h3>Commonly Used</h3>
 
 <div class="row">
-  <div class="column">
+  <div class="column4">
     <div class="card">
   <img src="goal_sheet.png" style="width:100%">
   <div class="container">
@@ -240,7 +285,7 @@ body {
     </div>
   </div>
 
-  <div class="column">
+  <div class="column4">
     <div class="card">
   <img src="internet_matrix.png" style="width:100%">
   <div class="container">
@@ -249,7 +294,7 @@ body {
     </div>
   </div>
   
-  <div class="column">
+  <div class="column4">
     <div class="card">
   <img src="journal_matrix.png" style="width:100%">
   <div class="container">
@@ -258,7 +303,7 @@ body {
     </div>
   </div>
   
-  <div class="column">
+  <div class="column4">
     <div class="card">
   <img src="presentations.png" style="width:100%">
   <div class="container">
@@ -268,7 +313,7 @@ body {
   </div>
 </div>
 
-  <h3 id="Quarter Projects">Quarter Projects</h3>
+  <h3>Quarter Projects</h3>
 
 <div class="tab">
   <button class="tablinks" onclick="openproject(event, 'Sophomores')">Sophomores</button>
@@ -277,15 +322,88 @@ body {
 </div>
 
 <div id="Sophomores" class="tabcontent">
-  <p>Work In progress... ;^)</p>
+  <p><a href="https://docs.google.com/document/d/1gVd1aVmgb5SgsRvTB0DMFoCCw2KrZ-5Uq9f4vi94t_8/edit?usp=sharing">Q1</a> / <a href="#Quarter 2">Q2</a> / <a href="#Quarter 3">Q3</a> / <a href="https://docs.google.com/document/d/1hL5vU2Wtg2xNG3SGi6Hdot48iuj21puRs7rKK1PDevo/edit?usp=sharing">Q4</a></p>
 </div>
 
 <div id="Juniors" class="tabcontent">
-  <p>Work In progress... ;^)</p> 
+  <p><a href="https://docs.google.com/document/d/1FP-TuuUcFVYWGSkPi6R_rGqfZLaD6Bd2Hhu1_SPgj3s/edit?usp=sharing">Q1</a> / <a href="#Quarter 2">Q2</a> / <a href="https://docs.google.com/document/d/1JqafCHGhwbdntz2w8kbfqsMAxMOy4UucrWJvbGow0uo/edit?usp=sharing">Q3</a> / <a href="https://docs.google.com/document/d/1YRCrJ3op-E5JFiZk_dJbp2v8KHclobllgW1SNOFDTVI/edit?usp=sharing">Q4</a></p>
 </div>
 
 <div id="Seniors" class="tabcontent">
-  <p>Work In progress... ;^)</p>
+  <p><a href="https://docs.google.com/document/d/1GC2bvjwFEXhqancXoyxmcwfhx8kh38M5ubTXfEa6QNs/edit?usp=sharing">Q1</a> / <a href="https://docs.google.com/document/d/1lPMj13UtAqPFH39XDZptpPojD5JFPoqkEBLANBW2Bi0/edit?usp=sharing">Q2</a> / <a href="https://docs.google.com/document/d/1Mv2ti2zs9IEJoBfqkM50xYqxf_yH3cUv3QOfeMjNKLE/edit?usp=sharing">Q3</a> / <a href="https://docs.google.com/document/d/1yRhYagvzUnxLPA1M-tDX6c59g2gS74U-Z4sd5rCAgRo/edit?usp=sharing">Q4</a></p>
+</div>
+
+
+<div class="grid-container">
+  <div>
+
+  <h3>Competitions</h3>
+
+<div class="row">
+  <div class="column2">
+    <div class="card">
+  <img src="research_plan.png" style="width:100%">
+  <div class="container">
+    <p><a href="https://docs.google.com/document/d/1-wCoZPZFIIwrYKBdLim3PmtLXbVFBNDo3d26p720DDE/edit?usp=sharing">Research Plan</a></p>
+  </div>
+    </div>
+  </div>
+
+  <div class="column2">
+    <div class="card">
+  <img src="research_poster.png" style="width:100%">
+  <div class="container">
+    <p><a href="https://docs.google.com/document/d/1xWBAaTWhJb06fVCwcTqH9Ujip1upJEip6pBZEgZAAVM/edit?usp=sharing">Research Poster</a></p>
+  </div>
+    </div>
+  </div>
+</div>
+
+  <br>
+  
+  <p>Be sure to check this <a href="https://drive.google.com/file/d/1_jpB1JNK7R8xpSvYlk_DojRdeZEffO1e/view?usp=sharing">example research paper</a>!</p>
+
+  </div>
+
+  <div>
+
+  <h3>Other</h3>
+
+<div class="row">
+  <div class="column3">
+    <div class="card">
+  <img src="quarter_timeline.png" style="width:100%">
+  <div class="container">
+    <p><a href="https://docs.google.com/document/d/1KOHWWnKQKhpX8eJYCYA91m89To2FG-FPYuhj6vSk0Fo/edit?usp=sharing">Quarter Timeline</a></p>
+  </div>
+    </div>
+  </div>
+
+  <div class="column3">
+    <div class="card">
+  <img src="annotated_bibliography.png" style="width:100%">
+  <div class="container">
+    <p><a href="https://docs.google.com/document/d/1DsFdXgSTT2pu40Z6FN-CtNSvWvOZ02DGVaMwTvR5mNU/edit?usp=sharing">Annotated Bibliography</a></p>
+  </div>
+    </div>
+  </div>
+  
+    <div class="column3">
+    <div class="card">
+  <img src="portfolio_rubric.png" style="width:100%">
+  <div class="container">
+    <p><a href="https://docs.google.com/document/d/1V7RB3IoQmQVsSCiVxoI32f--i40l6E6MbBTYDj1ci8M/edit?usp=sharing">Portfolio Rubric</a></p>
+  </div>
+    </div>
+  </div>
+</div>
+
+  <p>Still Not Satisfied?</p>
+  <p> - <a href="https://nyack-public-schools.echalksites.com/groups/15029/science/science_research">Nyackschools</a></p>
+  <p> - <a href="https://nyackschools.schoology.com/course/2198755958/materials">Schoology</a></p>
+  <p> - <a href="https://classroom.google.com/c/NzQyOTE4MTI0MjJa">Google Classroom</a></p>
+
+  </div>
 </div>
 
 <script>
