@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
   margin: 0;
@@ -48,7 +49,7 @@ h3 {
   display: none;
 }
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child)
+  .topnav a:not([class="active"]) {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
@@ -85,7 +86,7 @@ body, html {
 }
 .parallax {
   background-image: linear-gradient(120deg, #00dbde, #fc00ff);
-  height: 200px;
+  height: 260px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -98,7 +99,7 @@ body, html {
 }
 .centered {
   position: absolute;
-  top: 120px;
+  top: 150px;
   left: 50%;
   transform: translate(-50%, -50%);
   }
@@ -160,6 +161,37 @@ body {
   border: 1px solid #ccc;
   border-top: none;
 }
+.menu {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 20%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+.menu-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 5%;
+  border: 1px solid #888;
+  width: 80%;
+}
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 .main {
   font-size: 24px;
   padding: 0% 5%;
@@ -173,7 +205,7 @@ body {
   <a href="#resources.html" class="active">Resources</a>
   <a href="competitions.html">Competitions</a>
   <a href="contact.html">Contact Us</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+  <a class="icon" id="open" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
 </div>
@@ -181,6 +213,16 @@ body {
 <div class="parallax">
 <div class="container">
 <dic class="centered"><h1>Science Research @Nyack</div>
+</div>
+
+<div id="Menu" class="menu">
+  <div class="menu-content">
+    <span class="close">&times;</span>
+    <p><a href="index.html">Home</a></p>
+    <p><a href="#resources.html" class="active">Resources</a></p>
+    <p><a href="competitions.html">Competitions</a></p>
+    <p><a href="contact.html">Contact Us</a></p>
+  </div>
 </div>
 
 <div class="main">
@@ -265,5 +307,23 @@ function openproject(evt, grade) {
 </script>
   </div>
 </div>
+
+<script>
+var modal = document.getElementById("Menu");
+var btn = document.getElementById("open");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
 </body>
 </html>
