@@ -12,8 +12,14 @@ body {
   color: #4f5b66;
   font-size: 20pt
 }
-h2, h3, h4 {
+h2 {
+  color: #006666;
+}
+h3 {
   color: #009999;
+}
+h4 {
+  color: #33cccc;
 }
 .topnav {
   overflow: hidden;
@@ -34,9 +40,6 @@ h2, h3, h4 {
   z-index: 1;
   outline: none;
 }
-.topnav a: {
-  color: #ff00ff;
-}
 .topnav a:hover {
   color: white;
 }
@@ -46,31 +49,10 @@ h2, h3, h4 {
 .topnav .icon {
   display: none;
 }
-@media screen and (max-width: 600px) {
-  .topnav a:not([class="active"]) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
 a {
   text-decoration: none;
 }
-a:link {
-  color: #33cccc;
-}
-a:visited {
+a:link, a:visited {
   color: #33cccc;
 }
 a:hover {
@@ -101,7 +83,7 @@ body, html {
   top: 5.5em;
   left: 50%;
   transform: translate(-50%, -50%);
-  }
+}
 * {
   box-sizing: border-box;
 }
@@ -137,6 +119,22 @@ body {
   text-align: center;
 }
 @media screen and (max-width: 600px) {
+  .topnav a:not([class="active"]) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
   .column4 {
     width: 100%;
     display: block;
@@ -154,6 +152,9 @@ body {
   }
   .grid-container {
     grid-template-columns: auto;
+  }
+  .grid-container > div {
+    text-align: left;
   }
 }
 @media screen and (max-width: 1000px) and (min-width: 600px) {
@@ -181,9 +182,14 @@ body {
 .card:hover {
   transform: translateY(-1em);
   transition: 0.3s;
+  color: #33cccc;
 }
-.container {
-  padding: 5px;
+.card:hover > div {
+  color: #ff00ff;
+}
+.caption {
+  padding: .5em;
+  color: #33cccc;
 }
 .tab {
   overflow: hidden;
@@ -286,47 +292,47 @@ body {
 
 <div class="row">
   <div class="column4">
-    <div class="card">
-      <a href="https://docs.google.com/document/d/1_8l82RTp_WdpbIUFfIgLhp7P6phxAzU8pVWJdoW59y8/edit?usp=sharing">
+    <a href="https://docs.google.com/document/d/1_8l82RTp_WdpbIUFfIgLhp7P6phxAzU8pVWJdoW59y8/edit?usp=sharing">
+      <div class="card">
   <img src="goal_sheet.png" style="width:100%">
-      </a>
-  <div class="container">
-    <h4>Biweekly Goal Sheet</h4>
+  <div class="caption">
+    <p>Biweekly Goal Sheet</p>
   </div>
-    </div>
+      </div>
+    </a>
   </div>
 
   <div class="column4">
-    <div class="card">
-      <a href="https://docs.google.com/document/d/1rZkzVRgqb0sJM6028duOeooU7qcVxw_oJLAaVJ_7O3A/edit?usp=sharing">
+    <a href="https://docs.google.com/document/d/1rZkzVRgqb0sJM6028duOeooU7qcVxw_oJLAaVJ_7O3A/edit?usp=sharing">
+      <div class="card">
   <img src="internet_matrix.png" style="width:100%">
-      </a>
-  <div class="container">
-    <h4>Internet Article Matrix</h4>
+  <div class="caption">
+    <p>Internet Article Matrix</p>
   </div>
-    </div>
+      </div>
+    </a>
   </div>
   
   <div class="column4">
-    <div class="card">
-      <a href="https://docs.google.com/document/d/1Z6PowGqb_H4APnNDJnNEVeGkxVWAWzOFLOkni4kPBqg/edit?usp=sharing">
+    <a href="https://docs.google.com/document/d/1Z6PowGqb_H4APnNDJnNEVeGkxVWAWzOFLOkni4kPBqg/edit?usp=sharing">
+      <div class="card">
   <img src="journal_matrix.png" style="width:100%">
-      </a>
-  <div class="container">
-    <h4>Journal Article Matrix</h4>
+  <div class="caption">
+    <p>Journal Article Matrix</p>
   </div>
-    </div>
+      </div>
+    </a>
   </div>
   
   <div class="column4">
-    <div class="card">
-      <a href="https://docs.google.com/document/d/139IZUW5o5j7YbN1Mqra4kes09CLSQAEnrMLCBMXwJo0/edit?usp=sharing">
+    <a href="https://docs.google.com/document/d/139IZUW5o5j7YbN1Mqra4kes09CLSQAEnrMLCBMXwJo0/edit?usp=sharing">
+      <div class="card">
   <img src="presentations.png" style="width:100%">
-      </a>
-  <div class="container">
-    <h4>Presentation Review Sheet</h4>
+  <div class="caption">
+    <p>Presentation Review Sheet</p>
   </div>
-    </div>
+      </div>
+    </a>
   </div>
 </div>
 
@@ -359,29 +365,29 @@ body {
 
 <div class="row">
   <div class="column2">
-    <div class="card">
-      <a href="https://drive.google.com/file/d/1Xftrx-oUMxnS3W3nPrM2NyFbjJGQfPj_/view?usp=sharing">
+    <a href="https://drive.google.com/file/d/1Xftrx-oUMxnS3W3nPrM2NyFbjJGQfPj_/view?usp=sharing">
+      <div class="card">
   <img src="research_plan.png" style="width:100%">
-      </a>
-  <div class="container">
-    <h4>Research Plan</h4>
+  <div class="caption">
+    <p>Research Plan</p>
   </div>
-    </div>
+      </div>
+    </a>
   </div>
 
   <div class="column2">
-    <div class="card">
-      <a href="https://docs.google.com/document/d/1xWBAaTWhJb06fVCwcTqH9Ujip1upJEip6pBZEgZAAVM/edit?usp=sharing">
+    <a href="https://docs.google.com/document/d/1xWBAaTWhJb06fVCwcTqH9Ujip1upJEip6pBZEgZAAVM/edit?usp=sharing">
+      <div class="card">
   <img src="research_poster.png" style="width:100%">
-      </a>
-  <div class="container">
-    <h4>Research Poster</h4>
+  <div class="caption">
+    <p>Research Poster</p>
   </div>
-    </div>
+      </div>
+    </a>
   </div>
 </div>
   
-  <p>Be sure to check this <a href="https://drive.google.com/file/d/1_jpB1JNK7R8xpSvYlk_DojRdeZEffO1e/view?usp=sharing">example research paper</a>!</p>
+  <p>Be sure to check out this <a href="https://drive.google.com/file/d/1_jpB1JNK7R8xpSvYlk_DojRdeZEffO1e/view?usp=sharing">example research paper</a>!</p>
 
   </div>
   <div>
@@ -390,36 +396,36 @@ body {
 
 <div class="row">
   <div class="column3">
-    <div class="card">
-      <a href="https://docs.google.com/document/d/1V7RB3IoQmQVsSCiVxoI32f--i40l6E6MbBTYDj1ci8M/edit?usp=sharing">
+    <a href="https://docs.google.com/document/d/1V7RB3IoQmQVsSCiVxoI32f--i40l6E6MbBTYDj1ci8M/edit?usp=sharing">
+      <div class="card">
   <img src="portfolio_rubric.png" style="width:100%">
-      </a>
-  <div class="container">
-    <h4>Portfolio Rubric</h4>
+  <div class="caption">
+    <p>Portfolio Rubric</p>
   </div>
-    </div>
+      </div>
+    </a>
   </div>
 
   <div class="column3">
-    <div class="card">
-      <a href="https://docs.google.com/document/d/1KOHWWnKQKhpX8eJYCYA91m89To2FG-FPYuhj6vSk0Fo/edit?usp=sharing">
+    <a href="https://docs.google.com/document/d/1KOHWWnKQKhpX8eJYCYA91m89To2FG-FPYuhj6vSk0Fo/edit?usp=sharing">
+      <div class="card">
   <img src="quarter_timeline.png" style="width:100%">
-      </a>
-  <div class="container">
-    <h4>Quarter Timeline</h4>
+  <div class="caption">
+    <p>Quarter Timeline</p>
   </div>
-    </div>
+      </div>
+    </a>
   </div>
   
-    <div class="column3">
-    <div class="card">
-      <a href="https://docs.google.com/document/d/1DsFdXgSTT2pu40Z6FN-CtNSvWvOZ02DGVaMwTvR5mNU/edit?usp=sharing">
+  <div class="column3">
+    <a href="https://docs.google.com/document/d/1DsFdXgSTT2pu40Z6FN-CtNSvWvOZ02DGVaMwTvR5mNU/edit?usp=sharing">
+      <div class="card">
   <img src="annotated_bibliography.png" style="width:100%">
-      </a>
-  <div class="container">
-    <h4>Annotated Bibliography</h4>
+  <div class="caption">
+    <p>Annotated Bibliography</p>
   </div>
-    </div>
+      </div>
+    </a>
   </div>
 </div>
 
