@@ -13,13 +13,13 @@ body {
   font-size: 20pt
 }
 h2 {
-  color: #006666;
+  color: #0a8a84;
 }
 h3 {
-  color: #009999;
+  color: #0ba29a;
 }
 h4 {
-  color: #33cccc;
+  color: #0dbab1;
 }
 .topnav {
   overflow: hidden;
@@ -53,7 +53,7 @@ a {
   text-decoration: none;
 }
 a:link, a:visited {
-  color: #33cccc;
+  color: #0fd2c8;
 }
 a:hover {
   color: #ff00ff;
@@ -209,13 +209,13 @@ body {
   color: #ff00ff;
 }
 .tab button.active {
-  color: #0000ff;
+  color: #8000ff;
 }
 .tabcontent {
   display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
+  float: right;
   font-size: 18pt;
+  margin-top: -.5em;
 }
 .menu {
   display: none;
@@ -250,7 +250,7 @@ body {
 .main {
   font-size: 18pt;
   padding: 1em;
-  max-width: 50em;
+  max-width: 52em;
   margin: auto;
 }
 </style>
@@ -338,25 +338,31 @@ body {
 
   <h3>Quarter Projects</h3>
 
+<div class="row">
+  <div class="column2">
 <div class="tab">
   <button class="tablinks" onclick="openproject(event, 'Sophomores')">Sophomores</button>
   <button class="tablinks" onclick="openproject(event, 'Juniors')">Juniors</button>
   <button class="tablinks" onclick="openproject(event, 'Seniors')">Seniors</button>
+  </div>
 </div>
 
+  <div class="column2">
 <div id="Sophomores" class="tabcontent">
   <p><a href="https://docs.google.com/document/d/1gVd1aVmgb5SgsRvTB0DMFoCCw2KrZ-5Uq9f4vi94t_8/edit?usp=sharing">Q1</a> / <a href="#Quarter 2">Q2</a> / <a href="#Quarter 3">Q3</a> / <a href="https://docs.google.com/document/d/1hL5vU2Wtg2xNG3SGi6Hdot48iuj21puRs7rKK1PDevo/edit?usp=sharing">Q4</a></p>
-</div>
+  </div>
 
 <div id="Juniors" class="tabcontent">
   <p><a href="https://docs.google.com/document/d/1FP-TuuUcFVYWGSkPi6R_rGqfZLaD6Bd2Hhu1_SPgj3s/edit?usp=sharing">Q1</a> / <a href="#Quarter 2">Q2</a> / <a href="https://docs.google.com/document/d/1JqafCHGhwbdntz2w8kbfqsMAxMOy4UucrWJvbGow0uo/edit?usp=sharing">Q3</a> / <a href="https://docs.google.com/document/d/1YRCrJ3op-E5JFiZk_dJbp2v8KHclobllgW1SNOFDTVI/edit?usp=sharing">Q4</a></p>
-</div>
+  </div>
 
 <div id="Seniors" class="tabcontent">
   <p><a href="https://docs.google.com/document/d/1GC2bvjwFEXhqancXoyxmcwfhx8kh38M5ubTXfEa6QNs/edit?usp=sharing">Q1</a> / <a href="https://docs.google.com/document/d/1lPMj13UtAqPFH39XDZptpPojD5JFPoqkEBLANBW2Bi0/edit?usp=sharing">Q2</a> / <a href="https://docs.google.com/document/d/1Mv2ti2zs9IEJoBfqkM50xYqxf_yH3cUv3QOfeMjNKLE/edit?usp=sharing">Q3</a> / <a href="https://docs.google.com/document/d/1yRhYagvzUnxLPA1M-tDX6c59g2gS74U-Z4sd5rCAgRo/edit?usp=sharing">Q4</a></p>
+  </div>
+</div>
 </div>
 
-<br><hr>
+<br>
 
 <div class="grid-container">
   <div>
