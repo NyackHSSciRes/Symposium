@@ -3,7 +3,6 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
   margin: 0;
@@ -39,14 +38,20 @@ h4 {
   z-index: 1;
   outline: none;
 }
-.topnav a:hover {
+.topnav a:hover, a.active {
   color: white;
 }
-.topnav a.active {
+.topnav a:focus {
   color: white;
+}
+.topnav a.notlink {
+  color: #0fd2c8;
 }
 .topnav .icon {
   display: none;
+  cursor: pointer;
+  font-size: 23pt;
+  padding: 0em .4em;
 }
 .grid-container {
   display: grid;
@@ -86,8 +91,9 @@ a {
 }
 a:link, a:visited {
   color: #0fd2c8;
+  outline: none;
 }
-a:hover {
+a:hover, a:focus {
   color: #ff00ff;
 }
 a:active {
@@ -145,7 +151,7 @@ body, html {
 .close {
   color: #aaaaaa;
   float: right;
-  font-size: 30pt;
+  font-size: 23pt;
   font-weight: bold;
 }
 .close:hover,
@@ -169,12 +175,13 @@ body, html {
 
 <div class="topnav">
   <a href="index.html">Home</a>
+  <a href="slides.html">Slides</a>
+  <a href="posters.html">Posters</a>
+  <a class="notlink">|</a>
   <a href="resources.html">Resources</a>
   <a href="competitions.html">Competitions</a>
-  <a href="#contact.html" class="active">Contact Us</a>
-  <a class="icon" id="open" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
+  <a class="active">Contact Us</a>
+  <a class="icon" id="open" onclick="myFunction()">☰</a>
 </div>
 
 <div class="parallax">
@@ -185,11 +192,14 @@ body, html {
 
 <div id="Menu" class="menu">
   <div class="menu-content">
-    <span class="close">&times;</span>
+    <span class="close">╳</span>
     <p><a href="index.html">Home</a></p>
+    <p><a href="slides.html">Slides</a></p>
+    <p><a href="posters.html">Posters</a></p>
+    <hr>
     <p><a href="resources.html">Resources</a></p>
     <p><a href="competitions.html">Competitions</a></p>
-    <p><a href="#contact.html" class="active">Contact Us</a></p>
+    <p><a class="active">Contact Us</a></p>
   </div>
 </div>
 

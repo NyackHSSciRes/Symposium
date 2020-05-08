@@ -3,7 +3,6 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
   margin: 0;
@@ -40,14 +39,20 @@ h4 {
   z-index: 1;
   outline: none;
 }
-.topnav a:hover {
+.topnav a:hover, a.active {
   color: white;
 }
-.topnav a.active {
+.topnav a:focus {
   color: white;
+}
+.topnav a.notlink {
+  color: #0fd2c8;
 }
 .topnav .icon {
   display: none;
+  cursor: pointer;
+  font-size: 23pt;
+  padding: 0em .4em;
 }
 @media screen and (max-width: 600px) {
   .topnav a:not([class="active"]) {display: none;}
@@ -72,8 +77,9 @@ a {
 }
 a:link, a:visited {
   color: #0fd2c8;
+  outline: none;
 }
-a:hover {
+a:hover, a:focus {
   color: #ff00ff;
 }
 a:active {
@@ -123,7 +129,7 @@ body, html {
 .close {
   color: #aaaaaa;
   float: right;
-  font-size: 30pt;
+  font-size: 23pt;
   font-weight: bold;
 }
 .close:hover,
@@ -143,13 +149,14 @@ body, html {
 <body>
 
 <div class="topnav">
-  <a href="#index.html" class="active">Home</a>
+  <a class="active">Home</a>
+  <a href="slides.html">Slides</a>
+  <a href="posters.html">Posters</a>
+  <a class="notlink">|</a>
   <a href="resources.html">Resources</a>
   <a href="competitions.html">Competitions</a>
   <a href="contact.html">Contact Us</a>
-  <a class="icon" id="open" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
+  <a class="icon" id="open" onclick="myFunction()">☰</a>
 </div>
 
 <div class="parallax">
@@ -160,8 +167,11 @@ body, html {
 
 <div id="Menu" class="menu">
   <div class="menu-content">
-    <span class="close">&times;</span>
-    <p><a href="#index.html" class="active">Home</a></p>
+    <span class="close">╳</span>
+    <p><a class="active">Home</a></p>
+    <p><a href="slides.html">Slides</a></p>
+    <p><a href="posters.html">Posters</a></p>
+    <hr>
     <p><a href="resources.html">Resources</a></p>
     <p><a href="competitions.html">Competitions</a></p>
     <p><a href="contact.html">Contact Us</a></p>
@@ -169,8 +179,22 @@ body, html {
 </div>
 
 <div class="main">
-  <h2>Science Research Symposium 2020</h2>
 
+  <h2>Science Research Symposium 2020</h2>
+  
+  <h3><i>A message from Dr. Montesano</i></h3>
+  
+<video style="width:100%" poster="montesano.jpg" controls>
+    <source src="message.mp4" type="video/mp4">
+    </object>
+</video>
+
+  <h3>Speech</h3>
+
+  <p>[insert inspiring message here]</p>
+  
+  <h3>Preparation</h3>
+  
   <p>Check the <a href="https://docs.google.com/document/d/1PP5DnA3xpJdXNcqtl_UGgX0lnx0jEzRNoSOEsSMN8Vg/edit">roles</a> and attend senior meetings.</p>
 
   <p>And please suggest any info I should add to this site, or make a pull request with the relevant changes (<a href="https://github.com/isaacm20/scires2020">Source Code</a>).</p>

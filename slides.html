@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+<style>
+body {
+  margin: 0;
+  font-family: Lato;
+  src: url(../isaacm20/LatoLatin/fonts/LatoLatin-Light.ttf") format('truetype');
+  color: #4f5b66;
+  font-size: 20pt
+}
+h2 {
+  color: #0a8a84;
+}
+h3 {
+  color: #0ba29a;
+}
+h4 {
+  color: #0dbab1;
+}
+.topnav {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #c0c5ce;
+  text-align: center;
+  padding: .6em .8em;
+  text-decoration: none;
+  font-size: 14pt;
+  z-index: 1;
+  outline: none;
+}
+.topnav a:hover, a.active {
+  color: white;
+}
+.topnav a:focus {
+  color: white;
+}
+.topnav a.notlink {
+  color: #0fd2c8;
+}
+.topnav .icon {
+  display: none;
+  cursor: pointer;
+  font-size: 23pt;
+  padding: 0em .4em;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not([class="active"]) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+a {
+  text-decoration: none;
+}
+a:link, a:visited {
+  color: #0fd2c8;
+  outline: none;
+}
+a:hover, a:focus {
+  color: #ff00ff;
+}
+a:active {
+  color: #8000ff;
+  outline: none;
+}
+body, html {
+  height: 100%;
+}
+.parallax {
+  background-image: linear-gradient(120deg, #00dbde, #fc00ff);
+  height: 10em;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  user-select: none;
+}
+.next {
+  right: 0;
+}
+.prev:hover, .next:hover {
+  color: rgba(0,0,0,0.8);
+}
+.title {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+.name {
+  color: black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+}
+.active, .dot:hover {
+  color: #0fd2c8;
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 5.5em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.menu {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 20%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+.menu-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 1em;
+  border: .05em solid #888;
+  width: 80%;
+}
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 23pt;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.main {
+  font-size: 18pt;
+  padding: 1em;
+  max-width: 50em;
+  margin: auto;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a class="active">Slides</a>
+  <a href="posters.html">Posters</a>
+  <a class="notlink">|</a>
+  <a href="resources.html">Resources</a>
+  <a href="competitions.html">Competitions</a>
+  <a href="contact.html">Contact Us</a>
+  <a class="icon" id="open" onclick="myFunction()">☰</a>
+</div>
+
+<div class="parallax">
+  <div class="container">
+<div class="centered"><h1>Science Research @Nyack</h1></div>
+  </div>
+</div>
+
+<div id="Menu" class="menu">
+  <div class="menu-content">
+    <span class="close">╳</span>
+    <p><a >Home</a></p>
+    <p><a class="active" href="slides.html">Slides</a></p>
+    <p><a href="posters.html">Posters</a></p>
+    <hr>
+    <p><a href="resources.html">Resources</a></p>
+    <p><a href="competitions.html">Competitions</a></p>
+    <p><a href="contact.html">Contact Us</a></p>
+  </div>
+</div>
+
+<div class="main">
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="name">Annabelle</div>
+  <video style="width:100%" controls>
+  <source src="https://drive.google.com/file/d/1Qqukk7yC5ZQS42pJvqBD9VM3zSrKd_4A/view?usp=sharing" poster="generic_thumbnail.png" type="video/mp4">
+  </video>
+  <div class="title">What's the Deal with Birds?</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="name">Augustus</div>
+  <video style="width:100%" controls>
+  <source src="https://drive.google.com/file/d/1Qqukk7yC5ZQS42pJvqBD9VM3zSrKd_4A/view?usp=sharing" poster="generic_thumbnail.png" type="video/mp4">
+  </video>
+  <div class="title">What's the Deal with Birds?</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="name">Aya</div>
+  <video style="width:100%" controls>
+  <source src="https://drive.google.com/file/d/1Qqukk7yC5ZQS42pJvqBD9VM3zSrKd_4A/view?usp=sharing" poster="generic_thumbnail.png" type="video/mp4">
+  </video>
+  <div class="title">What's the Deal with Birds?</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="name">Cameron</div>
+  <video style="width:100%" controls>
+  <source src="https://drive.google.com/file/d/1Qqukk7yC5ZQS42pJvqBD9VM3zSrKd_4A/view?usp=sharing" poster="generic_thumbnail.png" type="video/mp4">
+  </video>
+  <div class="title">What's the Deal with Birds?</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="name">Celeste</div>
+  <video style="width:100%" controls>
+  <source src="https://drive.google.com/file/d/1Qqukk7yC5ZQS42pJvqBD9VM3zSrKd_4A/view?usp=sharing" poster="generic_thumbnail.png" type="video/mp4">
+  </video>
+  <div class="title">What's the Deal with Birds?</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="name">Isaac</div>
+  <video style="width:100%" controls>
+  <source src="https://drive.google.com/file/d/1Qqukk7yC5ZQS42pJvqBD9VM3zSrKd_4A/view?usp=sharing" poster="generic_thumbnail.png" type="video/mp4">
+  </video>
+  <div class="title">What's the Deal with Birds?</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)">⚛</span> 
+  <span class="dot" onclick="currentSlide(2)">⚛</span> 
+  <span class="dot" onclick="currentSlide(3)">⚛</span>
+  <span class="dot" onclick="currentSlide(4)">⚛</span> 
+  <span class="dot" onclick="currentSlide(5)">⚛</span> 
+  <span class="dot" onclick="currentSlide(6)">⚛</span> 
+</div>
+
+  <h2>Senior Presentations</h2>
+
+  <p>[put more info in later]</p>
+  
+  </div>
+</div>
+
+<script>
+var modal = document.getElementById("Menu");
+var btn = document.getElementById("open");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html>

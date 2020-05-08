@@ -3,7 +3,6 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
   margin: 0;
@@ -40,22 +39,29 @@ h4 {
   z-index: 1;
   outline: none;
 }
-.topnav a:hover {
+.topnav a:hover, a.active {
   color: white;
 }
-.topnav a.active {
+.topnav a:focus {
   color: white;
+}
+.topnav a.notlink {
+  color: #0fd2c8;
 }
 .topnav .icon {
   display: none;
+  cursor: pointer;
+  font-size: 23pt;
+  padding: 0em .4em;
 }
 a {
   text-decoration: none;
 }
 a:link, a:visited {
   color: #0fd2c8;
+  outline: none;
 }
-a:hover {
+a:hover, a:focus {
   color: #ff00ff;
 }
 a:active {
@@ -238,7 +244,7 @@ body {
 .close {
   color: #aaaaaa;
   float: right;
-  font-size: 30pt;
+  font-size: 23pt;
   font-weight: bold;
 }
 .close:hover,
@@ -259,12 +265,13 @@ body {
 
 <div class="topnav">
   <a href="index.html">Home</a>
-  <a href="#resources.html" class="active">Resources</a>
+  <a href="slides.html">Slides</a>
+  <a href="posters.html">Posters</a>
+  <a class="notlink">|</a>
+  <a class="active">Resources</a>
   <a href="competitions.html">Competitions</a>
   <a href="contact.html">Contact Us</a>
-  <a class="icon" id="open" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
+  <a class="icon" id="open" onclick="myFunction()">☰</a>
 </div>
 
 <div class="parallax">
@@ -275,9 +282,12 @@ body {
 
 <div id="Menu" class="menu">
   <div class="menu-content">
-    <span class="close">&times;</span>
+    <span class="close">╳</span>
     <p><a href="index.html">Home</a></p>
-    <p><a href="#resources.html" class="active">Resources</a></p>
+    <p><a href="slides.html">Slides</a></p>
+    <p><a href="posters.html">Posters</a></p>
+    <hr>
+    <p><a class="active">Resources</a></p>
     <p><a href="competitions.html">Competitions</a></p>
     <p><a href="contact.html">Contact Us</a></p>
   </div>
@@ -287,14 +297,14 @@ body {
   <h2>Resources</h2>
 
   <p>All of these can be found on the <a href="https://nyack-public-schools.echalksites.com/groups/15029/science/science_research">Nyackschools website</a>, but mine are nicer.</p>
-
+  
   <h3>Commonly Used</h3>
 
 <div class="row">
   <div class="column4">
     <a href="https://docs.google.com/document/d/1_8l82RTp_WdpbIUFfIgLhp7P6phxAzU8pVWJdoW59y8/edit?usp=sharing">
       <div class="card">
-  <img src="goal_sheet.png" style="width:100%">
+  <img src="resources/goal_sheet.png" style="width:100%">
   <div class="caption">
     <p>Biweekly Goal Sheet</p>
   </div>
@@ -305,7 +315,7 @@ body {
   <div class="column4">
     <a href="https://docs.google.com/document/d/1rZkzVRgqb0sJM6028duOeooU7qcVxw_oJLAaVJ_7O3A/edit?usp=sharing">
       <div class="card">
-  <img src="internet_matrix.png" style="width:100%">
+  <img src="resources/internet_matrix.png" style="width:100%">
   <div class="caption">
     <p>Internet Article Matrix</p>
   </div>
@@ -316,7 +326,7 @@ body {
   <div class="column4">
     <a href="https://docs.google.com/document/d/1Z6PowGqb_H4APnNDJnNEVeGkxVWAWzOFLOkni4kPBqg/edit?usp=sharing">
       <div class="card">
-  <img src="journal_matrix.png" style="width:100%">
+  <img src="resources/journal_matrix.png" style="width:100%">
   <div class="caption">
     <p>Journal Article Matrix</p>
   </div>
@@ -327,7 +337,7 @@ body {
   <div class="column4">
     <a href="https://docs.google.com/document/d/139IZUW5o5j7YbN1Mqra4kes09CLSQAEnrMLCBMXwJo0/edit?usp=sharing">
       <div class="card">
-  <img src="presentations.png" style="width:100%">
+  <img src="resources/presentations.png" style="width:100%">
   <div class="caption">
     <p>Presentation Review Sheet</p>
   </div>
@@ -373,7 +383,7 @@ body {
   <div class="column2">
     <a href="https://drive.google.com/file/d/1Xftrx-oUMxnS3W3nPrM2NyFbjJGQfPj_/view?usp=sharing">
       <div class="card">
-  <img src="research_plan.png" style="width:100%">
+  <img src="resources/research_plan.png" style="width:100%">
   <div class="caption">
     <p>Research Plan</p>
   </div>
@@ -384,7 +394,7 @@ body {
   <div class="column2">
     <a href="https://docs.google.com/document/d/1xWBAaTWhJb06fVCwcTqH9Ujip1upJEip6pBZEgZAAVM/edit?usp=sharing">
       <div class="card">
-  <img src="research_poster.png" style="width:100%">
+  <img src="resources/research_poster.png" style="width:100%">
   <div class="caption">
     <p>Research Poster</p>
   </div>
@@ -404,7 +414,7 @@ body {
   <div class="column3">
     <a href="https://docs.google.com/document/d/1V7RB3IoQmQVsSCiVxoI32f--i40l6E6MbBTYDj1ci8M/edit?usp=sharing">
       <div class="card">
-  <img src="portfolio_rubric.png" style="width:100%">
+  <img src="resources/portfolio_rubric.png" style="width:100%">
   <div class="caption">
     <p>Portfolio Rubric</p>
   </div>
@@ -415,7 +425,7 @@ body {
   <div class="column3">
     <a href="https://docs.google.com/document/d/1KOHWWnKQKhpX8eJYCYA91m89To2FG-FPYuhj6vSk0Fo/edit?usp=sharing">
       <div class="card">
-  <img src="quarter_timeline.png" style="width:100%">
+  <img src="resources/quarter_timeline.png" style="width:100%">
   <div class="caption">
     <p>Quarter Timeline</p>
   </div>
@@ -426,7 +436,7 @@ body {
   <div class="column3">
     <a href="https://docs.google.com/document/d/1DsFdXgSTT2pu40Z6FN-CtNSvWvOZ02DGVaMwTvR5mNU/edit?usp=sharing">
       <div class="card">
-  <img src="annotated_bibliography.png" style="width:100%">
+  <img src="resources/annotated_bibliography.png" style="width:100%">
   <div class="caption">
     <p>Annotated Bibliography</p>
   </div>

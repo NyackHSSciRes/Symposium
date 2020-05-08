@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+<style>
+body {
+  margin: 0;
+  font-family: Lato;
+  src: url(../isaacm20/LatoLatin/fonts/LatoLatin-Light.ttf") format('truetype');
+  color: #4f5b66;
+  font-size: 20pt
+}
+h2 {
+  color: #0a8a84;
+}
+h3 {
+  color: #0ba29a;
+}
+h4 {
+  color: #0dbab1;
+}
+.topnav {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #c0c5ce;
+  text-align: center;
+  padding: .6em .8em;
+  text-decoration: none;
+  font-size: 14pt;
+  z-index: 1;
+  outline: none;
+}
+.topnav a:hover, a.active {
+  color: white;
+}
+.topnav a:focus {
+  color: white;
+}
+.topnav a.notlink {
+  color: #0fd2c8;
+}
+.topnav .icon {
+  display: none;
+  cursor: pointer;
+  font-size: 23pt;
+  padding: 0em .4em;
+}
+a {
+  text-decoration: none;
+}
+a:link, a:visited {
+  color: #0fd2c8;
+  outline: none;
+}
+a:hover, a:focus {
+  color: #ff00ff;
+}
+a:active {
+  color: #0000ff;
+  outline: none;
+}
+body, html {
+  height: 100%;
+}
+.parallax {
+  background-image: linear-gradient(120deg, #00dbde, #fc00ff);
+  height: 10em;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 5.5em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Lato;
+}
+.column4 {
+  float: left;
+  width: 25%;
+  padding: .5em;
+  margin-bottom: 1em;
+}
+.column3 {
+  float: left;
+  width: 33.333%;
+  padding: .5em;
+  margin-bottom: 1em;
+}
+.row {margin: 0em;}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.grid-container > div {
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not([class="active"]) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .column4 {
+    width: 100%;
+    display: block;
+    margin-bottom: 1em;
+  }
+  .column3 {
+    width: 100%;
+    display: block;
+    margin-bottom: 1em;
+  }
+  .grid-container {
+    grid-template-columns: auto;
+  }
+  .grid-container > div {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 1000px) and (min-width: 600px) {
+  .column4 {
+    width: 50%;
+    display: block;
+    margin-bottom: 1em;
+  }
+  .column3 {
+    width: 50%;
+    display: block;
+    margin-bottom: 1em;
+  }
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-1em);
+  transition: 0.3s;
+  color: #33cccc;
+}
+.card:hover > div {
+  color: #ff00ff;
+}
+.caption {
+  padding: .5em;
+  color: #33cccc;
+}
+.tab {
+  overflow: hidden;
+}
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.6em 0.8em;
+  transition: 0.3s;
+  font-size: 18pt;
+  color: #33cccc;
+}
+.tab button:hover {
+  color: #ff00ff;
+}
+.tab button.active {
+  color: #8000ff;
+}
+.tabcontent {
+  display: none;
+  float: right;
+  font-size: 18pt;
+  margin-top: -.5em;
+}
+.menu {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 20%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+.menu-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 1em;
+  border: .05em solid #888;
+  width: 80%;
+}
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 23pt;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.main {
+  font-size: 18pt;
+  padding: 1em;
+  max-width: 52em;
+  margin: auto;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="slides.html">Slides</a>
+  <a class="active">Posters</a>
+  <a class="notlink">|</a>
+  <a href="resources.html">Resources</a>
+  <a href="competitions.html">Competitions</a>
+  <a href="contact.html">Contact Us</a>
+  <a class="icon" id="open" onclick="myFunction()">☰</a>
+</div>
+
+<div class="parallax">
+  <div class="container">
+<div class="centered"><h1>Science Research @Nyack</h1></div>
+  </div>
+</div>
+
+<div id="Menu" class="menu">
+  <div class="menu-content">
+    <span class="close">╳</span>
+    <p><a href="index.html">Home</a></p>
+    <p><a href="slides.html">Slides</a></p>
+    <p><a class="active" href="posters.html">Posters</a></p>
+    <hr>
+    <p><a href="resources.html">Resources</a></p>
+    <p><a href="competitions.html">Competitions</a></p>
+    <p><a href="contact.html">Contact Us</a></p>
+  </div>
+</div>
+
+<div class="main">
+  <h2>Student Projects</h2>
+
+  <p>The seniors made slides presentation in addition to posters</p>
+
+  <h3>Seniors</h3>
+
+<div class="row">
+  <div class="column3">
+    <a href="#students/annabelle/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Annabelle Bangs</p>
+  </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="column3">
+    <a href="#students/augustus/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Augustus Howard</p>
+  </div>
+      </div>
+    </a>
+  </div>
+  
+  <div class="column3">
+    <a href="#students/aya/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Aya Habbas</p>
+  </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="column3">
+    <a href="#students/celeste/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Celeste Voutsinas-Klose</p>
+  </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="column3">
+    <a href="#students/cameron/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Cameron Shelley</p>
+  </div>
+      </div>
+    </a>
+  </div>
+  
+  <div class="column3">
+    <a href="students/isaac/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Isaac Murrell</p>
+  </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<br><hr><br>
+
+  <h3>Juniors</h3>
+
+<div class="row">
+  <div class="column4">
+    <a href="#students/andrea/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Andrea Garcia</p>
+  </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="column4">
+    <a href="#students/nicolas/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Nicolas Hughes-Barrow</p>
+  </div>
+      </div>
+    </a>
+  </div>
+  
+  <div class="column4">
+    <a href="#students/richard/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Richard Feldman</p>
+  </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="column4">
+    <a href="#students/william/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>William Eisen</p>
+  </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<br><hr><br>
+
+  <h3>Sophomores</h3>
+
+<div class="row">
+  <div class="column4">
+    <a href="#students/amber/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Amber Reese</p>
+  </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="column4">
+    <a href="#students/christopher/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Christopher Bangs</p>
+  </div>
+      </div>
+    </a>
+  </div>
+  
+  <div class="column4">
+    <a href="#students/claire/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Claire Jacobson</p>
+  </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="column4">
+    <a href="#students/jadyn/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Jadyn Turner</p>
+  </div>
+      </div>
+    </a>
+  </div>
+  
+  <div class="column4">
+    <a href="#students/juliet/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Juliet Lovelace</p>
+  </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="column4">
+    <a href="#students/lukas/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Lukas Chyla</p>
+  </div>
+      </div>
+    </a>
+  </div>
+  
+  <div class="column4">
+    <a href="#students/mateo/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Mateo Sanabria</p>
+  </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="column4">
+    <a href="#students/quinn/info.html">
+      <div class="card">
+  <img src="generic_poster.png" style="width:100%">
+  <div class="caption">
+    <p>Quinn Connor</p>
+  </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<script>
+function openproject(evt, grade) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(grade).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+  </div>
+</div>
+
+<script>
+var modal = document.getElementById("Menu");
+var btn = document.getElementById("open");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
