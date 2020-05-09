@@ -11,6 +11,19 @@ body {
   color: #4f5b66;
   font-size: 20pt
 }
+.dark-mode {
+  background-color: #00171d;
+  color: #9ca7b2;
+}
+.dark-mode h2 {
+  color: #5cccc6;
+}
+.dark-mode h3 {
+  color: #49c6bf;
+}
+.dark-mode h4 {
+  color: #3bbbb4;
+}
 h2 {
   color: #0a8a84;
 }
@@ -50,6 +63,12 @@ h4 {
   cursor: pointer;
   font-size: 23pt;
   padding: 0em .4em;
+}
+.topnav .dark {
+  cursor: pointer;
+  font-size: 23pt;
+  padding: 0em .4em;
+  float: right
 }
 .dropdown {
   float: left;
@@ -232,6 +251,7 @@ body, html {
   </div>
   <a href="juniors.html">Juniors</a>
   <a class="active">Sophomores</a>
+  <a class="dark" id="dark" onclick="darker()">☾</a>
   <a class="icon" id="open" onclick="myFunction()">☰</a>
 </div>
 
@@ -510,7 +530,34 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+document.body.style.color = sessionStorage.getItem('cc');
+function darker() {
+  if ( sessionStorage.getItem('cc') === 'light') {
+    sessionStorage.setItem('cc', 'dark');
+    document.body.classList.add("dark-mode");
+  }
+  else if (sessionStorage.getItem('cc') == null || undefined) {
+    sessionStorage.setItem('cc', 'dark');
+    document.body.classList.add("dark-mode");
+  }
+  else if( sessionStorage.getItem('cc') === 'dark') {
+    sessionStorage.setItem('cc', 'light');
+    document.body.classList.remove("dark-mode");
+  }
+document.body.style.color = sessionStorage.getItem('cc');
+}
+function onload() {
+  if ( sessionStorage.getItem('cc') === 'light') {
+    document.body.classList.remove("dark-mode");
+  }
+  else if (sessionStorage.getItem('cc') == null || undefined) {
+    document.body.classList.remove("dark-mode");
+  }
+  else if( sessionStorage.getItem('cc') === 'dark') {
+    document.body.classList.add("dark-mode");
+  }
+document.body.style.color = sessionStorage.getItem('cc');
+}
 </script>
-
-</body>
+<body onload="onload()"></body>
 </html>
