@@ -21,12 +21,12 @@ h4 {
   color: #0dbab1;
 }
 .topnav {
-  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1;
+  max-height: 46px
 }
 .topnav a {
   float: left;
@@ -39,10 +39,7 @@ h4 {
   z-index: 1;
   outline: none;
 }
-.topnav a:hover, a.active {
-  color: white;
-}
-.topnav a:focus {
+.topnav a:hover, a.active, .topnav a:focus {
   color: white;
 }
 .topnav a.notlink {
@@ -53,6 +50,39 @@ h4 {
   cursor: pointer;
   font-size: 23pt;
   padding: 0em .4em;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  padding: .6em .8em;
+  background-color: inherit;
+  font-family: inherit;
+  font-size: 14pt;
+  margin: 0;
+  color: #0fd2c8
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 46px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 @media screen and (max-width: 600px) {
   .topnav a:not([class="active"]) {display: none;}
@@ -120,11 +150,16 @@ body, html {
   background-color: rgba(0,0,0,0.5);
 }
 .menu-content {
-  background-color: #fefefe;
+  background-color: rgba(0, 0, 0, 0.5);
   margin: auto;
   padding: 1em;
-  border: .05em solid #888;
   width: 80%;
+}
+.menu-content a:hover, a.active {
+  color: white;
+}
+.menu-content a:focus {
+  color: white;
 }
 .close {
   color: #aaaaaa;
@@ -134,7 +169,7 @@ body, html {
 }
 .close:hover,
 .close:focus {
-  color: #000;
+  color: white;
   text-decoration: none;
   cursor: pointer;
 }
@@ -149,13 +184,20 @@ body, html {
 <body>
 
 <div class="topnav">
-  <a class="active">Home</a>
-  <a href="slides.html">Slides</a>
-  <a href="posters.html">Posters</a>
-  <a class="notlink">|</a>
-  <a href="resources.html">Resources</a>
-  <a href="competitions.html">Competitions</a>
-  <a href="contact.html">Contact Us</a>
+  <a class="active">Introduction</a>
+  <div class="dropdown">
+    <a href="seniors.html" class="dropbtn">Seniors ⏷</a>
+    <div class="dropdown-content">
+      <a href="seniors/annabelle.html">Annabelle</a>
+      <a href="seniors/augustus.html">Augustus</a>
+      <a href="seniors/aya.html">Aya</a>
+      <a href="seniors/cameron.html">Cameron</a>
+      <a href="seniors/celeste.html">Celeste</a>
+      <a href="seniors/isaac.html">Isaac</a>
+    </div>
+  </div>
+  <a href="juniors.html">Juniors</a>
+  <a href="sophomores.html">Sophomores</a>
   <a class="icon" id="open" onclick="myFunction()">☰</a>
 </div>
 
@@ -168,13 +210,10 @@ body, html {
 <div id="Menu" class="menu">
   <div class="menu-content">
     <span class="close">╳</span>
-    <p><a class="active">Home</a></p>
-    <p><a href="slides.html">Slides</a></p>
-    <p><a href="posters.html">Posters</a></p>
-    <hr>
-    <p><a href="resources.html">Resources</a></p>
-    <p><a href="competitions.html">Competitions</a></p>
-    <p><a href="contact.html">Contact Us</a></p>
+    <p><a class="active">Introduction</a></p>
+    <p><a href="seniors.html">Seniors</a></p>
+    <p><a href="juniors.html">Juniors</a></p>
+    <p><a href="sophomores.html">Sophomores</a></p>
   </div>
 </div>
 

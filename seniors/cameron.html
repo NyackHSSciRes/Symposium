@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+<style>
+body {
+  margin: 0;
+  font-family: Lato;
+  src: url(../isaacm20/LatoLatin/fonts/LatoLatin-Light.ttf") format('truetype');
+  color: #4f5b66;
+  font-size: 20pt
+}
+h2 {
+  color: #0a8a84;
+}
+h3 {
+  color: #0ba29a;
+}
+h4 {
+  color: #0dbab1;
+}
+.topnav {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  max-height: 46px
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #c0c5ce;
+  text-align: center;
+  padding: .6em .8em;
+  text-decoration: none;
+  font-size: 14pt;
+  z-index: 1;
+  outline: none;
+}
+.topnav a:hover, a.active {
+  color: white;
+}
+.topnav a:focus {
+  color: white;
+}
+.topnav a.notlink {
+  color: #0fd2c8;
+}
+.topnav .icon {
+  display: none;
+  cursor: pointer;
+  font-size: 23pt;
+  padding: 0em .4em;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  padding: .6em .8em;
+  background-color: inherit;
+  font-family: inherit;
+  font-size: 14pt;
+  margin: 0;
+  color: #0fd2c8
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 46px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+a:link, a:visited {
+  color: #0fd2c8;
+  outline: none;
+}
+a:hover, a:focus {
+  color: #ff00ff;
+}
+a:active {
+  color: #8000ff;
+  outline: none;
+}
+body, html {
+  height: 100%;
+}
+.parallax {
+  background-image: linear-gradient(120deg, #00dbde, #fc00ff);
+  height: 10em;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 5.5em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.menu {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 20%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+.menu-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: auto;
+  padding: 1em;
+  width: 80%;
+}
+.menu-content a:hover, a.active {
+  color: white;
+}
+.menu-content a:focus {
+  color: white;
+}
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 23pt;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1em;
+  padding-top: 1em;
+  margin: auto;
+}
+.grid-container > div {
+  text-align: left;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow-x: hidden;
+  padding: .5em;
+  text-decoration: none;
+  font-size: 14pt;
+  display: block;
+}
+.photo {
+  display: block;
+  margin: 0 auto;
+}
+.text {
+  font-size: 18pt;
+  margin-top: -1em;
+}
+.main {
+  font-size: 18pt;
+  padding: 1em;
+  max-width: 50em;
+  margin: auto;
+}
+@media screen and (min-width: 600px) {
+  .card {
+    max-width: 15em
+  }
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not([class="dropbtn"]) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .grid-container {
+    grid-template-columns: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="../index.html">Introduction</a>
+  <div class="dropdown">
+    <a href="../seniors.html" class="dropbtn">Seniors ⏷</a>
+    <div class="dropdown-content">
+      <a href="annabelle.html">Annabelle</a>
+      <a href="augustus.html">Augustus</a>
+      <a href="aya.html">Aya</a>
+      <a class="active">Cameron</a>
+      <a href="celeste.html">Celeste</a>
+      <a href="isaac.html">Isaac</a>
+    </div>
+  </div>
+  <a href="../juniors.html">Juniors</a>
+  <a href="../sophomores.html">Sophomores</a>
+  <a class="icon" id="open" onclick="myFunction()">☰</a>
+</div>
+
+<div class="parallax">
+  <div class="container">
+<div class="centered"><h1>Science Research @Nyack</h1></div>
+  </div>
+</div>
+
+<div id="Menu" class="menu">
+  <div class="menu-content">
+    <span class="close">╳</span>
+    <p><a href="../index.html">Introduction</a></p>
+    <p><a href="../seniors.html">Seniors</a></p>
+    <p><a class="active">- Cameron</a></p>
+    <p><a href="../juniors.html">Juniors</a></p>
+    <p><a href="../sophomores.html">Sophomores</a></p>
+  </div>
+</div>
+
+<div class="main">
+
+  <h2>Cameron Shelley</h2>
+  
+  <h3>Slides Presentation</h3>
+  
+<video style="width:100%" poster="../generic_thumbnail.png" controls>
+    <source src="../message.mp4" type="video/mp4">
+    </object>
+</video>
+  
+  <h3>Poster Presentation</h3>
+  
+<video style="width:100%" poster="../generic_poster.png" controls>
+    <source src="../message.mp4" type="video/mp4">
+    </object>
+</video>
+
+<div class="grid-container">
+  <div>
+
+<div class="card">
+  <img src="../generic_avatar.png" style="width:15em" class="photo">
+  <h4>About Me</h4>
+  <p>Attending: Generic University</p>
+  <p>I love science research - Cameron 2020</p>
+</div>
+
+  </div>
+  <div>
+
+<div class="text">
+  <h2>Bivariate Analysis of contributing factors of Anhedonia</h2>
+  <h4>Mentor: Dr. Russell Toben</h4>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+  
+</div>
+
+  </div>
+</div>
+
+<br>
+<iframe src="https://docs.google.com/document/d/1iN2qkizH7mmBZk-P8LZ1sJ-3kUuDH8Ih6LNBLr_dBdM/edit?usp=sharing" width=100% height=1000px></iframe>
+
+  </div>
+</div>
+
+<script>
+var modal = document.getElementById("Menu");
+var btn = document.getElementById("open");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
