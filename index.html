@@ -55,9 +55,6 @@ h4 {
 .topnav a:hover, a.active, .topnav a:focus {
   color: white;
 }
-.topnav a.notlink {
-  color: #0fd2c8;
-}
 .topnav .icon {
   display: none;
   cursor: pointer;
@@ -130,22 +127,18 @@ h4 {
 }
 a {
   text-decoration: none;
+  outline: none;
 }
 a:link, a:visited {
   color: #0fd2c8;
-  outline: none;
 }
 a:hover, a:focus {
   color: #ff00ff;
 }
 a:active {
   color: #8000ff;
-  outline: none;
 }
-body, html {
-  height: 100%;
-}
-.parallax {
+.header {
   background-image: linear-gradient(120deg, #00dbde, #fc00ff);
   height: 10em;
   background-attachment: fixed;
@@ -153,16 +146,12 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.container {
-  position: relative;
-  text-align: center;
-  color: white;
-}
 .centered {
   position: absolute;
   top: 5.5em;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: white;
 }
 .menu {
   display: none;
@@ -225,12 +214,11 @@ body, html {
   <a href="juniors.html">Juniors</a>
   <a href="sophomores.html">Sophomores</a>
   <a class="dark" id="dark" onclick="darker()">☾</a>
-  <a class="icon" id="open" onclick="myFunction()">☰</a>
+  <a class="icon" id="open">☰</a>
 </div>
 
-<div class="parallax">
-  <div class="container">
-<div class="centered"><h1>Science Research @Nyack</h1></div>
+<div class="header">
+  <div class="centered"><h1>Science Research @Nyack</h1>
   </div>
 </div>
 
@@ -304,31 +292,22 @@ window.onclick = function(event) {
 }
 document.body.style.color = sessionStorage.getItem('cc');
 function darker() {
-  if ( sessionStorage.getItem('cc') === 'light') {
-    sessionStorage.setItem('cc', 'dark');
-    document.body.classList.add("dark-mode");
-  }
-  else if (sessionStorage.getItem('cc') == null || undefined) {
-    sessionStorage.setItem('cc', 'dark');
-    document.body.classList.add("dark-mode");
-  }
-  else if( sessionStorage.getItem('cc') === 'dark') {
+  if ( sessionStorage.getItem('cc') == 'dark') {
     sessionStorage.setItem('cc', 'light');
     document.body.classList.remove("dark-mode");
   }
-document.body.style.color = sessionStorage.getItem('cc');
-}
-function onload() {
-  if ( sessionStorage.getItem('cc') === 'light') {
-    document.body.classList.remove("dark-mode");
-  }
-  else if (sessionStorage.getItem('cc') == null || undefined) {
-    document.body.classList.remove("dark-mode");
-  }
-  else if( sessionStorage.getItem('cc') === 'dark') {
+  else {
+    sessionStorage.setItem('cc', 'dark');
     document.body.classList.add("dark-mode");
   }
-document.body.style.color = sessionStorage.getItem('cc');
+}
+function onload() {
+  if ( sessionStorage.getItem('cc') == 'dark') {
+    document.body.classList.add("dark-mode");
+  }
+  else {
+    document.body.classList.remove("dark-mode");
+  }
 }
 </script>
 <body onload="onload()"></body>
