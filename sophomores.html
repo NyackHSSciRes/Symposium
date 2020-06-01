@@ -52,7 +52,7 @@ h4 {
   z-index: 1;
   outline: none;
 }
-.topnav a:hover, a.active, .topnav a:focus {
+.topnav a:hover, .topnav a:focus, a.active {
   color: white;
 }
 .topnav .icon {
@@ -79,7 +79,6 @@ h4 {
   font-family: inherit;
   font-size: 14pt;
   margin: 0;
-  color: #0fd2c8
 }
 .dropdown-content {
   display: none;
@@ -113,6 +112,9 @@ a:hover, a:focus {
 a:active {
   color: #8000ff;
 }
+* {
+  box-sizing: border-box;
+}
 .header {
   background-image: linear-gradient(120deg, #00dbde, #fc00ff);
   height: 10em;
@@ -143,7 +145,7 @@ a:active {
   background-color: rgba(0, 0, 0, 0.5);
   margin: auto;
   padding: 1em;
-  width: 80%;
+  width: 95%;
 }
 .menu-content a:hover, a.active {
   color: white;
@@ -163,45 +165,50 @@ a:active {
   text-decoration: none;
   cursor: pointer;
 }
+.column4 {
+  float: left;
+  width: 25%;
+  padding: .5em;
+  margin-bottom: 1em;
+}
+.row {margin: 0em;}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
-  grid-gap: 1em;
-  padding-top: 1em;
-  margin: auto;
 }
 .grid-container > div {
-  text-align: left;
+  text-align: center;
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  overflow-x: hidden;
+  text-align: center;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-1em);
+  transition: 0.3s;
+  color: #33cccc;
+}
+.card:hover > div {
+  color: #ff00ff;
+}
+.caption {
   padding: .5em;
-  text-decoration: none;
-  font-size: 14pt;
-  display: block;
-}
-.photo {
-  display: block;
-  margin: 0 auto;
-}
-.text {
-  font-size: 18pt;
-  margin-top: -1em;
+  color: #33cccc;
 }
 .main {
   font-size: 18pt;
   padding: 1em;
-  max-width: 50em;
+  max-width: 52em;
   margin: auto;
 }
-@media screen and (min-width: 600px) {
-  .card {
-    max-width: 15em
-  }
-}
 @media screen and (max-width: 600px) {
-  .topnav a:not([class="active"]) {display: none;}
+  .topnav a:not([class="dropbtn"]) {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
@@ -224,8 +231,23 @@ a:active {
     display: block;
     text-align: left;
   }
+  .column4 {
+    width: 100%;
+    display: block;
+    margin-bottom: 1em;
+  }
   .grid-container {
     grid-template-columns: auto;
+  }
+  .grid-container > div {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 1000px) and (min-width: 600px) {
+  .column4 {
+    width: 50%;
+    display: block;
+    margin-bottom: 1em;
   }
 }
 </style>
@@ -235,7 +257,7 @@ a:active {
 <div class="topnav">
   <a href="index.html">Introduction</a>
   <div class="dropdown">
-    <a href="seniors.html" class="dropbtn">Seniors ⏷</a>
+    <a href="seniors.html" class="dropbtn">Seniors</a>
     <div class="dropdown-content">
       <a href="seniors/annabelle.html">Annabelle</a>
       <a href="seniors/augustus.html">Augustus</a>
@@ -245,8 +267,28 @@ a:active {
       <a href="seniors/isaac.html">Isaac</a>
     </div>
   </div>
-  <a href="juniors.html">Juniors</a>
-  <a class="active">Sophomores</a>
+  <div class="dropdown">
+    <a href="juniors.html" class="dropbtn">Juniors</a>
+    <div class="dropdown-content">
+      <a href="juniors/andrea.html">Andrea</a>
+      <a href="juniors/nicolas.html">Nicolas</a>
+      <a href="juniors/richard.html">Richard</a>
+      <a href="juniors/william.html">William</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <a class="active dropbtn">Sophomores</a>
+    <div class="dropdown-content">
+      <a href="sophomores/amber.html">Amber</a>
+      <a href="sophomores/christopher.html">Christopher</a>
+      <a href="sophomores/claire.html">Claire</a>
+      <a href="sophomores/jadyn.html">Jadyn</a>
+      <a href="sophomores/juliet.html">Juliet</a>
+      <a href="sophomores/lukas.html">Lukas</a>
+      <a href="sophomores/mateo.html">Mateo</a>
+      <a href="sophomores/quinn.html">Quinn</a>
+    </div>
+  </div>
   <a class="dark" id="dark" onclick="darker()">☾</a>
   <a class="icon" id="open">☰</a>
 </div>
@@ -268,270 +310,100 @@ a:active {
 
 <div class="main">
 
-  <h2>Sophomore Presentations</h2>
-  
-  <h3>Amber</h3>
-  
-<video style="width:100%" poster="generic_thumbnail.png" controls>
-    <source src="message.mp4" type="video/mp4">
-    </object>
-</video>
+  <h2>Junior Presentations</h2>
 
-<div class="grid-container">
-  <div>
-
-<div class="card">
-  <img src="generic_avatar.png" style="width:15em" class="photo">
-  <h4>About Me</h4>
-  <p>I love science research - Amber 2020</p>
-</div>
-
+  <div class="column4">
+    <a href="sophomores/amber.html">
+      <div class="card">
+  <img src="avatar_background.png" style="width:100%">
+  <div class="caption">
+    <p>Amber Reese</p>
   </div>
-  <div>
-
-<div class="text">
-  <h2>My generic research title</h2>
-
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-  
-  <div id="graphcomment"></div>
-</div>
-
+      </div>
+    </a>
   </div>
-</div>
-
-  <h3>Christopher</h3>
   
-<video style="width:100%" poster="generic_thumbnail.png" controls>
-    <source src="message.mp4" type="video/mp4">
-    </object>
-</video>
-
-<div class="grid-container">
-  <div>
-
-<div class="card">
-  <img src="generic_avatar.png" style="width:15em" class="photo">
-  <h4>About Me</h4>
-  <p>I love science research - Christopher 2020</p>
-</div>
-
+  <div class="column4">
+    <a href="sophomores/christopher.html">
+      <div class="card">
+  <img src="avatar_background.png" style="width:100%">
+  <div class="caption">
+    <p>Christopher Bangs</p>
   </div>
-  <div>
-
-<div class="text">
-  <h2>My generic research title</h2>
-
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-  
-  <div id="graphcomment"></div>
-</div>
-
+      </div>
+    </a>
   </div>
-</div>
 
-  <h3>Claire</h3>
-  
-<video style="width:100%" poster="generic_thumbnail.png" controls>
-    <source src="message.mp4" type="video/mp4">
-    </object>
-</video>
-
-<div class="grid-container">
-  <div>
-
-<div class="card">
-  <img src="generic_avatar.png" style="width:15em" class="photo">
-  <h4>About Me</h4>
-  <p>I love science research - Claire 2020</p>
-</div>
-
+  <div class="column4">
+    <a href="sophomores/claire.html">
+      <div class="card">
+  <img src="avatar_background.png" style="width:100%">
+  <div class="caption">
+    <p>Claire Jacobson</p>
   </div>
-  <div>
-
-<div class="text">
-  <h2>My generic research title</h2>
-
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-  
-  <div id="graphcomment"></div>
-</div>
-
+      </div>
+    </a>
   </div>
-</div>
 
-  <h3>Jadyn</h3>
-  
-<video style="width:100%" poster="generic_thumbnail.png" controls>
-    <source src="message.mp4" type="video/mp4">
-    </object>
-</video>
-
-<div class="grid-container">
-  <div>
-
-<div class="card">
-  <img src="generic_avatar.png" style="width:15em" class="photo">
-  <h4>About Me</h4>
-  <p>I love science research - Jadyn 2020</p>
-</div>
-
+  <div class="column4">
+    <a href="sophomores/jadyn.html">
+      <div class="card">
+  <img src="avatar_background.png" style="width:100%">
+  <div class="caption">
+    <p>Jadyn Turner</p>
   </div>
-  <div>
-
-<div class="text">
-  <h2>My generic research title</h2>
-
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-  
-  <div id="graphcomment"></div>
-</div>
-
+      </div>
+    </a>
   </div>
-</div>
   
-  <h3>Juliet</h3>
-  
-<video style="width:100%" poster="generic_thumbnail.png" controls>
-    <source src="message.mp4" type="video/mp4">
-    </object>
-</video>
-
-<div class="grid-container">
-  <div>
-
-<div class="card">
-  <img src="generic_avatar.png" style="width:15em" class="photo">
-  <h4>About Me</h4>
-  <p>I love science research - Juliet 2020</p>
-</div>
-
+  <div class="column4">
+    <a href="sophomores/juliet.html">
+      <div class="card">
+  <img src="avatar_background.png" style="width:100%">
+  <div class="caption">
+    <p>Juliet Lovelace</p>
   </div>
-  <div>
-
-<div class="text">
-  <h2>My generic research title</h2>
-
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+      </div>
+    </a>
+  </div>
   
-  <div id="graphcomment"></div>
+  <div class="column4">
+    <a href="sophomores/lukas.html">
+      <div class="card">
+  <img src="avatar_background.png" style="width:100%">
+  <div class="caption">
+    <p>Lukas Chyla</p>
+  </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="column4">
+    <a href="sophomores/mateo.html">
+      <div class="card">
+  <img src="avatar_background.png" style="width:100%">
+  <div class="caption">
+    <p>Mateo Sanabria</p>
+  </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="column4">
+    <a href="sophomores/quinn.html">
+      <div class="card">
+  <img src="avatar_background.png" style="width:100%">
+  <div class="caption">
+    <p>Quinn Connor</p>
+  </div>
+      </div>
+    </a>
+  </div>
 </div>
 
   </div>
 </div>
 
-  <h3>Lukas</h3>
-  
-<video style="width:100%" poster="generic_thumbnail.png" controls>
-    <source src="message.mp4" type="video/mp4">
-    </object>
-</video>
-
-<div class="grid-container">
-  <div>
-
-<div class="card">
-  <img src="generic_avatar.png" style="width:15em" class="photo">
-  <h4>About Me</h4>
-  <p>I love science research - Lukas 2020</p>
-</div>
-
-  </div>
-  <div>
-
-<div class="text">
-  <h2>My generic research title</h2>
-
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-  
-  <div id="graphcomment"></div>
-</div>
-
-  </div>
-</div>
-
-  <h3>Mateo</h3>
-  
-<video style="width:100%" poster="generic_thumbnail.png" controls>
-    <source src="message.mp4" type="video/mp4">
-    </object>
-</video>
-
-<div class="grid-container">
-  <div>
-
-<div class="card">
-  <img src="generic_avatar.png" style="width:15em" class="photo">
-  <h4>About Me</h4>
-  <p>I love science research - Mateo 2020</p>
-</div>
-
-  </div>
-  <div>
-
-<div class="text">
-  <h2>My generic research title</h2>
-
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-  
-  <div id="graphcomment"></div>
-</div>
-
-  </div>
-</div>
-
-  <h3>Quinn</h3>
-  
-<video style="width:100%" poster="generic_thumbnail.png" controls>
-    <source src="message.mp4" type="video/mp4">
-    </object>
-</video>
-
-<div class="grid-container">
-  <div>
-
-<div class="card">
-  <img src="generic_avatar.png" style="width:15em" class="photo">
-  <h4>About Me</h4>
-  <p>I love science research - Quinn 2020</p>
-</div>
-
-  </div>
-  <div>
-
-<div class="text">
-  <h2>My generic research title</h2>
-
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-  
-  <div id="graphcomment"></div>
-</div>
-
-  </div>
-</div>
-
-<script type="text/javascript">
-
-  /* - - - CONFIGURATION VARIABLES - - - */
-
-  // make sure the id is yours
-  window.gc_params = {
-    graphcomment_id: 'scires',
-
-    // if your website has a fixed header, indicate it's height in pixels
-    fixed_header_height: 0,
-  };
-
-  /* - - - DON'T EDIT BELOW THIS LINE - - - */
-
-  
-  (function() {
-    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
-    gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
-  })();
-
-</script>
 <script>
 var modal = document.getElementById("Menu");
 var btn = document.getElementById("open");
