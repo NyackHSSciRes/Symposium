@@ -3,11 +3,11 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel='stylesheet'>
 <style>
 body {
   margin: 0;
   font-family: Lato;
-  src: url(../isaacm20/LatoLatin/fonts/LatoLatin-Light.ttf") format('truetype');
   color: #4f5b66;
   font-size: 20pt
 }
@@ -58,14 +58,16 @@ h4 {
 .topnav .icon {
   display: none;
   cursor: pointer;
-  font-size: 23pt;
-  padding: 0em .4em;
+  font-size: 20pt;
+  padding: .2em .4em;
+  color: #c0c5ce;
 }
 .topnav .dark {
   cursor: pointer;
-  font-size: 23pt;
-  padding: 0em .4em;
-  float: right
+  font-size: 20pt;
+  padding: .2em .4em;
+  float: right;
+  color: #c0c5ce;
 }
 .dropdown {
   float: left;
@@ -79,6 +81,16 @@ h4 {
   font-family: inherit;
   font-size: 14pt;
   margin: 0;
+}
+.dropdown .current {
+  border: none;
+  outline: none;
+  padding: .6em .8em;
+  background-color: inherit;
+  font-family: inherit;
+  font-size: 14pt;
+  margin: 0;
+  color: white
 }
 .dropdown-content {
   display: none;
@@ -208,7 +220,7 @@ a:active {
   margin: auto;
 }
 @media screen and (max-width: 600px) {
-  .topnav a:not([class="dropbtn"]) {display: none;}
+  .topnav a:not([class="current"]) {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
@@ -257,7 +269,7 @@ a:active {
 <div class="topnav">
   <a href="index.html">Introduction</a>
   <div class="dropdown">
-    <a class="active dropbtn">Seniors</a>
+    <a class="current">Seniors</a>
     <div class="dropdown-content">
       <a href="seniors/annabelle.html">Annabelle</a>
       <a href="seniors/augustus.html">Augustus</a>
@@ -289,8 +301,8 @@ a:active {
       <a href="sophomores/quinn.html">Quinn</a>
     </div>
   </div>
-  <a class="dark" id="dark" onclick="darker()">☾</a>
-  <a class="icon" id="open">☰</a>
+  <a class="dark" id="dark" onclick="darker()"><i class="fa fa-moon-o"></i></a>
+  <a class="icon" id="open"><i class="fa fa-bars"></i></a>
 </div>
 
 <div class="header">
@@ -300,7 +312,7 @@ a:active {
 
 <div id="Menu" class="menu">
   <div class="menu-content">
-    <span class="close">╳</span>
+    <span class="close"><i class="fa fa-times"></i></span>
     <p><a href="index.html">Introduction</a></p>
     <p><a class="active">Seniors</a></p>
     <p><a href="juniors.html">Juniors</a></p>

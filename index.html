@@ -3,11 +3,11 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel='stylesheet'>
 <style>
 body {
   margin: 0;
   font-family: Lato;
-  src: url(../isaacm20/LatoLatin/fonts/LatoLatin-Light.ttf") format('truetype');
   color: #4f5b66;
   font-size: 20pt
 }
@@ -58,14 +58,16 @@ h4 {
 .topnav .icon {
   display: none;
   cursor: pointer;
-  font-size: 23pt;
-  padding: 0em .4em;
+  font-size: 20pt;
+  padding: .2em .4em;
+  color: #c0c5ce;
 }
 .topnav .dark {
   cursor: pointer;
-  font-size: 23pt;
-  padding: 0em .4em;
-  float: right
+  font-size: 20pt;
+  padding: .2em .4em;
+  float: right;
+  color: #c0c5ce;
 }
 .dropdown {
   float: left;
@@ -233,8 +235,8 @@ a:active {
       <a href="sophomores/quinn.html">Quinn</a>
     </div>
   </div>
-  <a class="dark" id="dark" onclick="darker()">☾</a>
-  <a class="icon" id="open">☰</a>
+  <a class="dark" id="dark" onclick="darker()"><i class="fa fa-moon-o"></i></a>
+  <a class="icon" id="open"><i class="fa fa-bars"></i></a>
 </div>
 
 <div class="header">
@@ -244,7 +246,7 @@ a:active {
 
 <div id="Menu" class="menu">
   <div class="menu-content">
-    <span class="close">╳</span>
+    <span class="close"><i class="fa fa-times"></i></span>
     <p><a class="active">Introduction</a></p>
     <p><a href="seniors.html">Seniors</a></p>
     <p><a href="juniors.html">Juniors</a></p>
