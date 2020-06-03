@@ -9,7 +9,7 @@ body {
   margin: 0;
   font-family: Lato;
   color: #4f5b66;
-  font-size: 20pt
+  font-size: 20pt;
 }
 .dark-mode {
   background-color: #00171d;
@@ -52,7 +52,7 @@ h4 {
   z-index: 1;
   outline: none;
 }
-.topnav a:hover, .topnav a:focus, a.active {
+.topnav a:hover, a.active, .topnav a:focus {
   color: white;
 }
 .topnav .icon {
@@ -81,6 +81,7 @@ h4 {
   font-family: inherit;
   font-size: 14pt;
   margin: 0;
+  color: #0fd2c8
 }
 .dropdown .current {
   border: none;
@@ -90,7 +91,7 @@ h4 {
   font-family: inherit;
   font-size: 14pt;
   margin: 0;
-  color: white
+  color: #0fd2c8
 }
 .dropdown-content {
   display: none;
@@ -124,9 +125,6 @@ a:hover, a:focus {
 a:active {
   color: #8000ff;
 }
-* {
-  box-sizing: border-box;
-}
 .header {
   background-image: linear-gradient(120deg, #00dbde, #fc00ff);
   height: 10em;
@@ -157,7 +155,7 @@ a:active {
   background-color: rgba(0, 0, 0, 0.5);
   margin: auto;
   padding: 1em;
-  width: 95%;
+  width: 80%;
 }
 .menu-content a:hover, a.active {
   color: white;
@@ -173,56 +171,46 @@ a:active {
 }
 .close:hover,
 .close:focus {
-  color: #000;
+  color: white;
   text-decoration: none;
   cursor: pointer;
-}
-.column4 {
-  float: left;
-  width: 25%;
-  padding: .5em;
-  margin-bottom: 1em;
-}
-.row {margin: 0em;}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
 }
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
+  grid-gap: 1em;
+  padding-top: 1em;
+  margin: auto;
 }
 .grid-container > div {
-  text-align: center;
+  text-align: left;
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-  transition: 0.3s;
-}
-.card:hover {
-  transform: translateY(-1em);
-  transition: 0.3s;
-  color: #33cccc;
-}
-.card:hover > div {
-  color: #ff00ff;
-}
-.img {
-  width:100%;
-  max-height:11em;
-  overflow: hidden
-}
-.caption {
+  overflow-x: hidden;
   padding: .5em;
-  color: #33cccc;
+  text-decoration: none;
+  font-size: 14pt;
+  display: block;
+}
+.photo {
+  display: block;
+  margin: 0 auto;
+}
+.text {
+  font-size: 18pt;
+  margin-top: -1em;
 }
 .main {
   font-size: 18pt;
   padding: 1em;
-  max-width: 52em;
+  max-width: 50em;
   margin: auto;
+}
+@media screen and (min-width: 600px) {
+  .card {
+    max-width: 15em
+  }
 }
 @media screen and (max-width: 600px) {
   .topnav a:not([class="current"]) {display: none;}
@@ -248,23 +236,8 @@ a:active {
     display: block;
     text-align: left;
   }
-  .column4 {
-    width: 100%;
-    display: block;
-    margin-bottom: 1em;
-  }
   .grid-container {
     grid-template-columns: auto;
-  }
-  .grid-container > div {
-    text-align: left;
-  }
-}
-@media screen and (max-width: 1000px) and (min-width: 600px) {
-  .column4 {
-    width: 50%;
-    display: block;
-    margin-bottom: 1em;
   }
 }
 </style>
@@ -272,38 +245,38 @@ a:active {
 <body onload="onload()">
 
 <div class="topnav">
-  <a href="index.html">Introduction</a>
+  <a href="../index.html">Introduction</a>
   <div class="dropdown">
-    <a href="seniors.html" class="dropbtn">Seniors</a>
+    <a href="../seniors.html" class="dropbtn">Seniors</a>
     <div class="dropdown-content">
-      <a href="seniors/annabelle.html">Annabelle</a>
-      <a href="seniors/augustus.html">Augustus</a>
-      <a href="seniors/aya.html">Aya</a>
-      <a href="seniors/cameron.html">Cameron</a>
-      <a href="seniors/celeste.html">Celeste</a>
-      <a href="seniors/isaac.html">Isaac</a>
+      <a href="../seniors/annabelle.html">Annabelle</a>
+      <a href="../seniors/augustus.html">Augustus</a>
+      <a href="../seniors/aya.html">Aya</a>
+      <a href="../seniors/cameron.html">Cameron</a>
+      <a href="../seniors/celeste.html">Celeste</a>
+      <a href="../seniors/isaac.html">Isaac</a>
     </div>
   </div>
   <div class="dropdown">
-    <a href="juniors.html" class="dropbtn">Juniors</a>
+    <a href="../juniors.html" class="dropbtn">Juniors</a>
     <div class="dropdown-content">
-      <a href="juniors/andrea.html">Andrea</a>
-      <a href="juniors/nicolas.html">Nicolas</a>
-      <a href="juniors/richard.html">Richard</a>
-      <a href="juniors/william.html">William</a>
+      <a href="../juniors/andrea.html">Andrea</a>
+      <a href="../juniors/nicolas.html">Nicolas</a>
+      <a href="../juniors/richard.html">Richard</a>
+      <a href="../juniors/william.html">William</a>
     </div>
   </div>
   <div class="dropdown">
-    <a class="current">Sophomores</a>
+    <a href="../sophomores.html" class="current">Sophomores</a>
     <div class="dropdown-content">
-      <a href="sophomores/amber.html">Amber</a>
-      <a href="sophomores/christopher.html">Christopher</a>
-      <a href="sophomores/claire.html">Claire</a>
-      <a href="sophomores/jadyn.html">Jadyn</a>
-      <a href="sophomores/juliet.html">Juliet</a>
-      <a href="sophomores/lukas.html">Lukas</a>
-      <a href="sophomores/mateo.html">Mateo</a>
-      <a href="sophomores/quinn.html">Quinn</a>
+      <a href="amber.html">Amber</a>
+      <a href="christopher.html">Christopher</a>
+      <a class="active">Claire</a>
+      <a href="jadyn.html">Jadyn</a>
+      <a href="juliet.html">Juliet</a>
+      <a href="lukas.html">Lukas</a>
+      <a href="mateo.html">Mateo</a>
+      <a href="quinn.html">Quinn</a>
     </div>
   </div>
   <a class="dark" id="dark" onclick="darker()"><i class="fa fa-moon-o"></i></a>
@@ -311,117 +284,85 @@ a:active {
 </div>
 
 <div class="header">
-  <div class="centered"><h1>Science Research @Nyack</h1>
+  <div class="centered"><h1>Claire Jacobson</h1>
   </div>
 </div>
 
 <div id="Menu" class="menu">
   <div class="menu-content">
     <span class="close"><i class="fa fa-times"></i></span>
-    <p><a href="index.html">Introduction</a></p>
-    <p><a href="seniors.html">Seniors</a></p>
-    <p><a href="juniors.html">Juniors</a></p>
-    <p><a class="active">Sophomores</a></p>
+    <p><a href="../index.html">Introduction</a></p>
+    <p><a href="../seniors.html">Seniors</a></p>
+    <p><a href="../juniors.html">Juniors</a></p>
+    <p><a href="../sophomores.html">Sophomores</a></p>
   </div>
 </div>
 
 <div class="main">
-
-  <h2>Junior Presentations</h2>
-
-  <div class="column4">
-    <a href="sophomores/amber.html">
-      <div class="card">
-  <img src="avatar_background.png" class="img">
-  <div class="caption">
-    <p>Amber Reese</p>
-  </div>
-      </div>
-    </a>
-  </div>
   
-  <div class="column4">
-    <a href="sophomores/christopher.html">
-      <div class="card">
-  <img src="avatar_background.png" class="img">
-  <div class="caption">
-    <p>Christopher Bangs</p>
-  </div>
-      </div>
-    </a>
-  </div>
-
-  <div class="column4">
-    <a href="sophomores/claire.html">
-      <div class="card">
-  <img src="https://drive.google.com/uc?export=view&id=15manIGCFOUMWpkMIFEcAXX8HJ-XG0vjW" class="img">
-  <div class="caption">
-    <p>Claire Jacobson</p>
-  </div>
-      </div>
-    </a>
-  </div>
-
-  <div class="column4">
-    <a href="sophomores/jadyn.html">
-      <div class="card">
-  <img src="https://drive.google.com/uc?export=view&id=1gplD4O5TUjDGvFyBTe3_g4REjxDdroWe" class="img">
-  <div class="caption">
-    <p>Jadyn Turner</p>
-  </div>
-      </div>
-    </a>
-  </div>
+  <h3>Poster</h3>
   
-  <div class="column4">
-    <a href="sophomores/juliet.html">
-      <div class="card">
-  <img src="https://drive.google.com/uc?export=view&id=1lz5OupBwoI8cKWxKkbYwQuhMrsDfz7W4" class="img">
-  <div class="caption">
-    <p>Juliet Lovelace</p>
-  </div>
-      </div>
-    </a>
-  </div>
+<img src="https://drive.google.com/uc?export=view&id=1Di5nE1vHPhm5lNIx0XevhcoQcnQfTnGp" width=100%>
   
-  <div class="column4">
-    <a href="sophomores/lukas.html">
-      <div class="card">
-  <img src="avatar_background.png" class="img">
-  <div class="caption">
-    <p>Lukas Chyla</p>
+  <h3>Presentation</h3>
+  
+<div>
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://drive.google.com/file/d/1YImmi2nyDd39d3a_PH00GhejjqPezgOC/preview" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
   </div>
-      </div>
-    </a>
-  </div>
+</div>
 
-  <div class="column4">
-    <a href="sophomores/mateo.html">
-      <div class="card">
-  <img src="avatar_background.png" class="img">
-  <div class="caption">
-    <p>Mateo Sanabria</p>
-  </div>
-      </div>
-    </a>
-  </div>
+<div class="grid-container">
+  <div>
 
-  <div class="column4">
-    <a href="sophomores/quinn.html">
-      <div class="card">
-  <img src="https://drive.google.com/uc?export=view&id=1N-5lgEzoYhtD4lmvL583yXoGXsVmyn6j" class="img">
-  <div class="caption">
-    <p>Quinn Connor</p>
+<div class="card">
+  <img src="https://drive.google.com/uc?export=view&id=15manIGCFOUMWpkMIFEcAXX8HJ-XG0vjW" width=275em height=100% class="photo">
+  <h4>About Me</h4>
+  <i>"The most important things I have learned in the science research program are how to communicate with professionals in my field of interest, how to break down larger problems into parts, and how to organize my time."</i>
+</div>
+
   </div>
-      </div>
-    </a>
-  </div>
+  <div>
+
+<div class="text">
+  <h2>The Impact of Gender Roles on Mental Health and Allostatic Load</h2>
+  <h4>Mentor: N/A</h4>
+
+  <p>In modern society, there are many ideas of how people should act based on their gender. The accepted idea of gender roles are constantly changing, especially in current times. I am studying the ways which people adapt to their assumed roles and how this adaptation can be linked to stress. Our brains are constantly changing to adapt to new circumstances and understanding how this works can help to develop a deeper background knowledge in this issue. Having greater insight into how people adapt to their gender roles can help to assess and develop trends across people. This is very beneficial in modern society to understand how these ever changing ideas of gender can be understood as a whole. I find this topic very interesting because it applies to the everyday life of people and it is helpful to know in the arguments about what gender roles should be.</p>
+  
 </div>
 
   </div>
 </div>
 
-<script>
+<br>
+<div id="graphcomment"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  /* - - - CONFIGURATION VARIABLES - - - */
+
+  // make sure the id is yours
+  window.gc_params = {
+    graphcomment_id: 'scires',
+
+    // if your website has a fixed header, indicate it's height in pixels
+    fixed_header_height: 0,
+  };
+
+  /* - - - DON'T EDIT BELOW THIS LINE - - - */
+
+  
+  (function() {
+    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+    gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+  })();
+
 var modal = document.getElementById("Menu");
 var btn = document.getElementById("open");
 var span = document.getElementsByClassName("close")[0];
