@@ -9,7 +9,7 @@ body {
   margin: 0;
   font-family: Lato;
   color: #4f5b66;
-  font-size: 20pt
+  font-size: 20pt;
 }
 .dark-mode {
   background-color: #00171d;
@@ -52,7 +52,7 @@ h4 {
   z-index: 1;
   outline: none;
 }
-.topnav a:hover, .topnav a:focus, a.active {
+.topnav a:hover, a.active, .topnav a:focus {
   color: white;
 }
 .topnav .icon {
@@ -81,6 +81,7 @@ h4 {
   font-family: inherit;
   font-size: 14pt;
   margin: 0;
+  color: #0fd2c8
 }
 .dropdown .current {
   border: none;
@@ -90,7 +91,7 @@ h4 {
   font-family: inherit;
   font-size: 14pt;
   margin: 0;
-  color: white
+  color: #0fd2c8
 }
 .dropdown-content {
   display: none;
@@ -124,9 +125,6 @@ a:hover, a:focus {
 a:active {
   color: #8000ff;
 }
-* {
-  box-sizing: border-box;
-}
 .header {
   background-image: linear-gradient(120deg, #00dbde, #fc00ff);
   height: 10em;
@@ -141,7 +139,6 @@ a:active {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  text-align:center
 }
 .menu {
   display: none;
@@ -158,7 +155,7 @@ a:active {
   background-color: rgba(0, 0, 0, 0.5);
   margin: auto;
   padding: 1em;
-  width: 95%;
+  width: 80%;
 }
 .menu-content a:hover, a.active {
   color: white;
@@ -174,47 +171,46 @@ a:active {
 }
 .close:hover,
 .close:focus {
-  color: #000;
+  color: white;
   text-decoration: none;
   cursor: pointer;
 }
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 1fr;
-  grid-column-gap: 1em;
-  grid-row-gap: 2em;
+  grid-template-columns: auto auto;
+  grid-gap: 1em;
+  padding-top: 1em;
+  margin: auto;
 }
 .grid-container > div {
-  text-align: center;
+  text-align: left;
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-  transition: 0.3s;
-}
-.card:hover {
-  transform: translateY(-1em);
-  transition: 0.3s;
-  color: #33cccc;
-}
-.card:hover > div {
-  color: #ff00ff;
-}
-.name {
+  overflow-x: hidden;
   padding: .5em;
-  color: #33cccc;
+  text-decoration: none;
+  font-size: 14pt;
+  display: block;
 }
-.title {
-  padding: .5em;
-  margin-top: -2em;
-  color: #4f5b66;
+.photo {
+  display: block;
+  margin: 0 auto;
+}
+.text {
+  font-size: 18pt;
+  margin-top: -1em;
 }
 .main {
   font-size: 18pt;
   padding: 1em;
-  max-width: 52em;
+  max-width: 50em;
   margin: auto;
+}
+@media screen and (min-width: 600px) {
+  .card {
+    max-width: 15em
+  }
 }
 @media screen and (max-width: 600px) {
   .topnav a:not([class="current"]) {display: none;}
@@ -240,21 +236,8 @@ a:active {
     display: block;
     text-align: left;
   }
-  .column4 {
-    width: 100%;
-    display: block;
-    margin-bottom: 1em;
-  }
   .grid-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .grid-container > div {
-    text-align: left;
-  }
-}
-@media screen and (max-width: 1000px) and (min-width: 600px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: auto;
   }
 }
 </style>
@@ -262,38 +245,38 @@ a:active {
 <body onload="onload()">
 
 <div class="topnav">
-  <a href="index.html">Introduction</a>
+  <a href="../index.html">Introduction</a>
   <div class="dropdown">
-    <a href="seniors.html" class="dropbtn">Seniors</a>
+    <a href="../seniors.html" class="dropbtn">Seniors</a>
     <div class="dropdown-content">
-      <a href="seniors/annabelle.html">Annabelle</a>
-      <a href="seniors/augustus.html">Augustus</a>
-      <a href="seniors/aya.html">Aya</a>
-      <a href="seniors/cameron.html">Cameron</a>
-      <a href="seniors/celeste.html">Celeste</a>
-      <a href="seniors/isaac.html">Isaac</a>
+      <a href="../seniors/annabelle.html">Annabelle</a>
+      <a href="../seniors/augustus.html">Augustus</a>
+      <a href="../seniors/aya.html">Aya</a>
+      <a href="../seniors/cameron.html">Cameron</a>
+      <a href="../seniors/celeste.html">Celeste</a>
+      <a href="../seniors/isaac.html">Isaac</a>
     </div>
   </div>
   <div class="dropdown">
-    <a href="juniors.html" class="dropbtn">Juniors</a>
+    <a href="../juniors.html" class="dropbtn">Juniors</a>
     <div class="dropdown-content">
-      <a href="juniors/andrea.html">Andrea</a>
-      <a href="juniors/nicolas.html">Nicolas</a>
-      <a href="juniors/richard.html">Richard</a>
-      <a href="juniors/william.html">William</a>
+      <a href="../juniors/andrea.html">Andrea</a>
+      <a href="../juniors/nicolas.html">Nicolas</a>
+      <a href="../juniors/richard.html">Richard</a>
+      <a href="../juniors/william.html">William</a>
     </div>
   </div>
   <div class="dropdown">
-    <a class="current">Sophomores</a>
+    <a href="../sophomores.html" class="current">Sophomores</a>
     <div class="dropdown-content">
-      <a href="sophomores/amber.html">Amber</a>
-      <a href="sophomores/christopher.html">Christopher</a>
-      <a href="sophomores/claire.html">Claire</a>
-      <a href="sophomores/jadyn.html">Jadyn</a>
-      <a href="sophomores/juliet.html">Juliet</a>
-      <a href="sophomores/lukas.html">Lukas</a>
-      <a href="sophomores/mateo.html">Mateo</a>
-      <a href="sophomores/quinn.html">Quinn</a>
+      <a href="amber.html">Amber</a>
+      <a href="christopher.html">Christopher</a>
+      <a href="claire.html">Claire</a>
+      <a href="jadyn.html">Jadyn</a>
+      <a href="juliet.html">Juliet</a>
+      <a href="lukas.html">Lukas</a>
+      <a class="active">Mateo</a>
+      <a href="quinn.html">Quinn</a>
     </div>
   </div>
   <a class="dark" id="dark" onclick="darker()"><i class="fa fa-moon-o"></i></a>
@@ -301,97 +284,85 @@ a:active {
 </div>
 
 <div class="header">
-  <div class="centered"><h1>Science Research @Nyack</h1>
+  <div class="centered"><h1>Mateo Sanabria</h1>
   </div>
 </div>
 
 <div id="Menu" class="menu">
   <div class="menu-content">
     <span class="close"><i class="fa fa-times"></i></span>
-    <p><a href="index.html">Introduction</a></p>
-    <p><a href="seniors.html">Seniors</a></p>
-    <p><a href="juniors.html">Juniors</a></p>
-    <p><a class="active">Sophomores</a></p>
+    <p><a href="../index.html">Introduction</a></p>
+    <p><a href="../seniors.html">Seniors</a></p>
+    <p><a href="../juniors.html">Juniors</a></p>
+    <p><a href="../sophomores.html">Sophomores</a></p>
   </div>
 </div>
 
 <div class="main">
-
-  <h2>Junior Presentations</h2>
-  <br>
+  
+  <h3>Poster</h3>
+  
+<img src="https://drive.google.com/uc?export=view&id=1P3GLiq2SWpxEoZmpCwY7c6Phvp65RBW3" width=100%>
+  
+  <h3>Presentation</h3>
+  
+<div>
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://drive.google.com/file/d/1QaaAAtIUkFGt0MGYHSbTjxbJ0AGnGrAZ/preview" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
 
 <div class="grid-container">
+  <div>
 
-    <a href="sophomores/amber.html">
-      <div class="card">
-  <img src="https://drive.google.com/uc?export=view&id=1fIPjoRwjSybSWuV9PhOTLSMwez3FBPMI" width="100%">
-  <div class="name"><p>Amber Reese</p></div>
-  <div class="title"><p>Do mosquitoes have a preference in blood </p></div>
-      </div>
-    </a>
+<div class="card">
+  <img src="https://drive.google.com/uc?export=view&id=1be1IiCfRr7txifkEEHxL3E6CLzVxThLV" width=275em height=100% class="photo">
+  <h4>About Me</h4>
+  <i>"Science Research has taught me better presentation skills and to be more confident in speaking for presentations."</i>
+</div>
+
+  </div>
+  <div>
+
+<div class="text">
+  <h2>How mental illness affects emotions and memory</h2>
+  <h4>Mentor: N/A</h4>
+
+  <p>I am currently studying about the effect of mental illness on the brain, and more specifically how it affects emotions and memory. Emotions are influenced by a person’s mood, relationships, and setting. Mental illness plays a major role in affecting emotions; they can make you feel all sorts of different feelings (like being nervous, and depressed). So if mental illnesses can affect emotions, I want to know if they can affect memories. Memories are often remembered with a certain feeling which makes the event more memorable. But can that memory be changed or almost corrupted because of mental illness later on in life? Emotional memories are associated with two things. First is how it is perceived (arousal); this is like where the memory was and how things are said. The second thing is what the memory was (valence),  whether it was a good or bad memory.</p>
   
-    <a href="sophomores/christopher.html">
-      <div class="card">
-  <img src="avatar_background.png" width="100%">
-  <div class="name"><p>Christopher Bangs</p></div>
-  <div class="title"><p>The Effects of Veillonella on Exercise</p></div>
-      </div>
-    </a>
-
-    <a href="sophomores/claire.html">
-      <div class="card">
-  <img src="https://drive.google.com/uc?export=view&id=15manIGCFOUMWpkMIFEcAXX8HJ-XG0vjW" width="100%">
-  <div class="name"><p>Claire Jacobson</p></div>
-  <div class="title"><p>The Impact of Gender Roles on Mental Health and Allostatic Load</p></div>
-      </div>
-    </a>
-
-    <a href="sophomores/jadyn.html">
-      <div class="card">
-  <img src="https://drive.google.com/uc?export=view&id=1gplD4O5TUjDGvFyBTe3_g4REjxDdroWe" width="100%">
-  <div class="name"><p>Jadyn Turner</p></div>
-  <div class="title"><p>How Media Coverage Of School Shootings Has Changed</p></div>
-      </div>
-    </a>
-  
-    <a href="sophomores/juliet.html">
-      <div class="card">
-  <img src="https://drive.google.com/uc?export=view&id=1Cbe0HGbIZf6JT5pxKsqDqfc3c2f2lE-5" width="100%">
-  <div class="name"><p>Juliet Lovelace</p></div>
-  <div class="title"><p>Capabilities of Soft Robotics as Prosthetic and Medical Devices</p></div>
-      </div>
-    </a>
-  
-    <a href="sophomores/lukas.html">
-      <div class="card">
-  <img src="https://drive.google.com/uc?export=view&id=1bFrztfi90ANOpgLWMVs9SB0ONfQmBscD" width="100%">
-  <div class="name"><p>Lukas Chyla</p></div>
-  <div class="title"><p>Effects of Climate Change on Animal Habitat</p></div>
-      </div>
-    </a>
-
-    <a href="sophomores/mateo.html">
-      <div class="card">
-  <img src="https://drive.google.com/uc?export=view&id=1be1IiCfRr7txifkEEHxL3E6CLzVxThLV" width="100%">
-  <div class="name"><p>Mateo Sanabria</p></div>
-  <div class="title"><p>How mental illness affects emotions and memory</p></div>
-      </div>
-    </a>
-
-    <a href="sophomores/quinn.html">
-      <div class="card">
-  <img src="https://drive.google.com/uc?export=view&id=1N-5lgEzoYhtD4lmvL583yXoGXsVmyn6j" width="100%">
-  <div class="name"><p>Quinn Connor</p></div>
-  <div class="title"><p>Microplastics: Effects on wildlife and possible solutions</p></div>
-      </div>
-    </a>
-
 </div>
 
   </div>
 </div>
 
-<script>
+<br>
+<div id="graphcomment"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  /* - - - CONFIGURATION VARIABLES - - - */
+
+  // make sure the id is yours
+  window.gc_params = {
+    graphcomment_id: 'scires',
+
+    // if your website has a fixed header, indicate it's height in pixels
+    fixed_header_height: 0,
+  };
+
+  /* - - - DON'T EDIT BELOW THIS LINE - - - */
+
+  
+  (function() {
+    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+    gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+  })();
+
 var modal = document.getElementById("Menu");
 var btn = document.getElementById("open");
 var span = document.getElementsByClassName("close")[0];
