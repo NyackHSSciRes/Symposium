@@ -3,6 +3,8 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel='stylesheet'>
+<link rel="icon" type="image/png" href="../favicon.png">
 <style>
 body {
   margin: 0;
@@ -57,20 +59,32 @@ h4 {
 .topnav .icon {
   display: none;
   cursor: pointer;
-  font-size: 23pt;
-  padding: 0em .4em;
+  font-size: 20pt;
+  padding: .2em .4em;
+  color: #c0c5ce;
 }
 .topnav .dark {
   cursor: pointer;
-  font-size: 23pt;
-  padding: 0em .4em;
-  float: right
+  font-size: 20pt;
+  padding: .2em .4em;
+  float: right;
+  color: #c0c5ce;
 }
 .dropdown {
   float: left;
   overflow: hidden;
 }
 .dropdown .dropbtn {
+  border: none;
+  outline: none;
+  padding: .6em .8em;
+  background-color: inherit;
+  font-family: inherit;
+  font-size: 14pt;
+  margin: 0;
+  color: #0fd2c8
+}
+.dropdown .current {
   border: none;
   outline: none;
   padding: .6em .8em;
@@ -201,7 +215,7 @@ a:active {
   }
 }
 @media screen and (max-width: 600px) {
-  .topnav a:not([class="dropbtn"]) {display: none;}
+  .topnav a:not([class="current"]) {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
@@ -255,7 +269,7 @@ a:active {
     </div>
   </div>
   <div class="dropdown">
-    <a href="../sophomores.html" class="dropbtn">Sophomores</a>
+    <a href="../sophomores.html" class="current">Sophomores</a>
     <div class="dropdown-content">
       <a href="amber.html">Amber</a>
       <a href="christopher.html">Christopher</a>
@@ -267,8 +281,8 @@ a:active {
       <a href="quinn.html">Quinn</a>
     </div>
   </div>
-  <a class="dark" id="dark" onclick="darker()">â˜¾</a>
-  <a class="icon" id="open">â˜°</a>
+  <a class="dark" id="dark" onclick="darker()"><i class="fa fa-moon-o"></i></a>
+  <a class="icon" id="open"><i class="fa fa-bars"></i></a>
 </div>
 
 <div class="header">
@@ -278,12 +292,11 @@ a:active {
 
 <div id="Menu" class="menu">
   <div class="menu-content">
-    <span class="close">â•³</span>
+    <span class="close"><i class="fa fa-times"></i></span>
     <p><a href="../index.html">Introduction</a></p>
     <p><a href="../seniors.html">Seniors</a></p>
     <p><a href="../juniors.html">Juniors</a></p>
     <p><a href="../sophomores.html">Sophomores</a></p>
-    <p><a class="active">- [first name]</a></p>
   </div>
 </div>
 
@@ -380,6 +393,7 @@ function darker() {
   }
 }
 function onload() {
+  document.title = "SciRes Sophomores - Juliet";
   if ( sessionStorage.getItem('cc') == 'dark') {
     document.body.classList.add("dark-mode");
   }
