@@ -4,13 +4,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel='stylesheet'>
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
 <style>
 body {
   margin: 0;
   font-family: Lato;
   color: #4f5b66;
-  font-size: 20pt
+  font-size: 20pt;
 }
 .dark-mode {
   background-color: #00171d;
@@ -53,7 +53,7 @@ h4 {
   z-index: 1;
   outline: none;
 }
-.topnav a:hover, .topnav a:focus, a.active {
+.topnav a:hover, a.active, .topnav a:focus {
   color: white;
 }
 .topnav .icon {
@@ -82,6 +82,7 @@ h4 {
   font-family: inherit;
   font-size: 14pt;
   margin: 0;
+  color: #0fd2c8
 }
 .dropdown .current {
   border: none;
@@ -91,7 +92,7 @@ h4 {
   font-family: inherit;
   font-size: 14pt;
   margin: 0;
-  color: white
+  color: #0fd2c8
 }
 .dropdown-content {
   display: none;
@@ -125,9 +126,6 @@ a:hover, a:focus {
 a:active {
   color: #8000ff;
 }
-* {
-  box-sizing: border-box;
-}
 .header {
   background-image: linear-gradient(120deg, #00dbde, #fc00ff);
   height: 10em;
@@ -159,7 +157,7 @@ a:active {
   background-color: rgba(0, 0, 0, 0.5);
   margin: auto;
   padding: 1em;
-  width: 95%;
+  width: 80%;
 }
 .menu-content a:hover, a.active {
   color: white;
@@ -175,48 +173,46 @@ a:active {
 }
 .close:hover,
 .close:focus {
-  color: #000;
+  color: white;
   text-decoration: none;
   cursor: pointer;
 }
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 1fr;
-  grid-column-gap: 1em;
-  grid-row-gap: 2em;
+  grid-template-columns: auto auto;
+  grid-gap: 1em;
+  padding-top: 1em;
+  margin: auto;
 }
 .grid-container > div {
-  text-align: center;
+  text-align: left;
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-  transition: 0.3s;
-}
-.card:hover {
-  transform: translateY(-1em);
-  transition: 0.3s;
-  color: #33cccc;
-}
-.card:hover > div {
-  color: #ff00ff;
-}
-.name {
+  overflow-x: hidden;
   padding: .5em;
-  margin-top: -.5em;
-  color: #33cccc;
+  text-decoration: none;
+  font-size: 14pt;
+  display: block;
 }
-.title {
-  padding: .5em;
-  margin-top: -2em;
-  color: #4f5b66;
+.photo {
+  display: block;
+  margin: 0 auto;
+}
+.text {
+  font-size: 18pt;
+  margin-top: -1em;
 }
 .main {
   font-size: 18pt;
   padding: 1em;
-  max-width: 52em;
+  max-width: 50em;
   margin: auto;
+}
+@media screen and (min-width: 600px) {
+  .card {
+    max-width: 15em
+  }
 }
 @media screen and (max-width: 600px) {
   .topnav a:not([class="current"]) {display: none;}
@@ -242,21 +238,8 @@ a:active {
     display: block;
     text-align: left;
   }
-  .column4 {
-    width: 100%;
-    display: block;
-    margin-bottom: 1em;
-  }
   .grid-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .grid-container > div {
-    text-align: left;
-  }
-}
-@media screen and (max-width: 1000px) and (min-width: 600px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: auto;
   }
 }
 </style>
@@ -264,38 +247,38 @@ a:active {
 <body onload="onload()">
 
 <div class="topnav">
-  <a href="index.html">Introduction</a>
+  <a href="../index.html">Introduction</a>
   <div class="dropdown">
-    <a href="seniors.html" class="dropbtn">Seniors</a>
+    <a href="../seniors.html" class="dropbtn">Seniors</a>
     <div class="dropdown-content">
-      <a href="seniors/annabelle.html">Annabelle</a>
-      <a href="seniors/augustus.html">Augustus</a>
-      <a href="seniors/aya.html">Aya</a>
-      <a href="seniors/cameron.html">Cameron</a>
-      <a href="seniors/celeste.html">Celeste</a>
-      <a href="seniors/isaac.html">Isaac</a>
+      <a href="../seniors/annabelle.html">Annabelle</a>
+      <a href="../seniors/augustus.html">Augustus</a>
+      <a href="../seniors/aya.html">Aya</a>
+      <a href="../seniors/cameron.html">Cameron</a>
+      <a href="../seniors/celeste.html">Celeste</a>
+      <a href="../seniors/isaac.html">Isaac</a>
     </div>
   </div>
   <div class="dropdown">
-    <a href="juniors.html" class="dropbtn">Juniors</a>
+    <a href="../juniors.html" class="dropbtn">Juniors</a>
     <div class="dropdown-content">
-      <a href="juniors/andrea.html">Andrea</a>
-      <a href="juniors/nicolas.html">Nicolas</a>
-      <a href="juniors/richard.html">Richard</a>
-      <a href="juniors/william.html">William</a>
+      <a href="../juniors/andrea.html">Andrea</a>
+      <a href="../juniors/nicolas.html">Nicolas</a>
+      <a href="../juniors/richard.html">Richard</a>
+      <a href="../juniors/william.html">William</a>
     </div>
   </div>
   <div class="dropdown">
-    <a class="current">Sophomores</a>
+    <a href="../sophomores.html" class="current">Sophomores</a>
     <div class="dropdown-content">
-      <a href="sophomores/amber.html">Amber</a>
-      <a href="sophomores/christopher.html">Christopher</a>
-      <a href="sophomores/claire.html">Claire</a>
-      <a href="sophomores/jadyn.html">Jadyn</a>
-      <a href="sophomores/juliet.html">Juliet</a>
-      <a href="sophomores/lukas.html">Lukas</a>
-      <a href="sophomores/mateo.html">Mateo</a>
-      <a href="sophomores/quinn.html">Quinn</a>
+      <a href="amber.html">Amber</a>
+      <a class="active">Christopher</a>
+      <a href="claire.html">Claire</a>
+      <a href="jadyn.html">Jadyn</a>
+      <a href="juliet.html">Juliet</a>
+      <a href="lukas.html">Lukas</a>
+      <a href="mateo.html">Mateo</a>
+      <a href="quinn.html">Quinn</a>
     </div>
   </div>
   <a class="dark" id="dark" onclick="darker()"><i class="fa fa-moon-o"></i></a>
@@ -303,97 +286,85 @@ a:active {
 </div>
 
 <div class="header">
-  <div class="centered"><h1>Science Research @Nyack</h1>
+  <div class="centered"><h1>Chris Bangs</h1>
   </div>
 </div>
 
 <div id="Menu" class="menu">
   <div class="menu-content">
     <span class="close"><i class="fa fa-times"></i></span>
-    <p><a href="index.html">Introduction</a></p>
-    <p><a href="seniors.html">Seniors</a></p>
-    <p><a href="juniors.html">Juniors</a></p>
-    <p><a class="active">Sophomores</a></p>
+    <p><a href="../index.html">Introduction</a></p>
+    <p><a href="../seniors.html">Seniors</a></p>
+    <p><a href="../juniors.html">Juniors</a></p>
+    <p><a href="../sophomores.html">Sophomores</a></p>
   </div>
 </div>
 
 <div class="main">
-
-  <h2>Sophomore Presentations</h2>
-  <br>
+  
+  <h3>Poster</h3>
+  
+<img src="https://drive.google.com/uc?export=view&id=1eCjUNw-VBwx1KGkEUgqlNiwVv1htOjCs" width=100%>
+  
+  <h3>Presentation</h3>
+  
+<div>
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://drive.google.com/file/d/1JdzULLIGLBTM1cUuHSXg0415Ea7VlD7J/preview" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
 
 <div class="grid-container">
+  <div>
 
-    <a href="sophomores/amber.html">
-      <div class="card">
-  <img src="sophomores/amber.jpg" width="100%">
-  <div class="name"><p>Amber Reese</p></div>
-  <div class="title"><p>Do mosquitoes have a preference in blood </p></div>
-      </div>
-    </a>
+<div class="card">
+  <img src="christopher.jpg" width=275em height=100% class="photo">
+  <h4>About Me</h4>
+  <i>"..."</i>
+</div>
+
+  </div>
+  <div>
+
+<div class="text">
+  <h2>The Effects of Veillonella on Exercise</h2>
+  <h4>Mentor: N/A</h4>
+
+  <p>Currently I am studying the effects of veillonella on the human body while exercising. Veillonella is a gut bacteria that feeds on lactic acid. Lactic acid is produced in your muscles when you are straining them. This can improve endurance and physical performance. It will also reduce soreness in your muscles after you exercise. Creating a probiotic out of this can help the average adult have better performance and more improvement when going to the gym or exercising. Veillonella is found in higher levels in long distance runners and top tier athletes. Having the average person be able to reach these levels could greatly improve the physical fitness of everyone.</p>
   
-    <a href="sophomores/christopher.html">
-      <div class="card">
-  <img src="sophomores/christopher.jpg" width="100%">
-  <div class="name"><p>Christopher Bangs</p></div>
-  <div class="title"><p>The Effects of Veillonella on Exercise</p></div>
-      </div>
-    </a>
-
-    <a href="sophomores/claire.html">
-      <div class="card">
-  <img src="sophomores/claire.png" width="100%">
-  <div class="name"><p>Claire Jacobson</p></div>
-  <div class="title"><p>The Impact of Gender Roles on Mental Health and Allostatic Load</p></div>
-      </div>
-    </a>
-
-    <a href="sophomores/jadyn.html">
-      <div class="card">
-  <img src="sophomores/jadyn.jpg" width="100%">
-  <div class="name"><p>Jadyn Turner</p></div>
-  <div class="title"><p>How Media Coverage Of School Shootings Has Changed</p></div>
-      </div>
-    </a>
-  
-    <a href="sophomores/juliet.html">
-      <div class="card">
-  <img src="sophomores/juliet.jpg" width="100%">
-  <div class="name"><p>Juliet Lovelace</p></div>
-  <div class="title"><p>Capabilities of Soft Robotics as Prosthetic and Medical Devices</p></div>
-      </div>
-    </a>
-  
-    <a href="sophomores/lukas.html">
-      <div class="card">
-  <img src="sophomores/lukas.jpg" width="100%">
-  <div class="name"><p>Lukas Chyla</p></div>
-  <div class="title"><p>Effects of Climate Change on Animal Habitat</p></div>
-      </div>
-    </a>
-
-    <a href="sophomores/mateo.html">
-      <div class="card">
-  <img src="sophomores/mateo.png" width="100%">
-  <div class="name"><p>Mateo Sanabria</p></div>
-  <div class="title"><p>How mental illness affects emotions and memory</p></div>
-      </div>
-    </a>
-
-    <a href="sophomores/quinn.html">
-      <div class="card">
-  <img src="sophomores/quinn.jpg" width="100%">
-  <div class="name"><p>Quinn Connor</p></div>
-  <div class="title"><p>Microplastics: Effects on wildlife and possible solutions</p></div>
-      </div>
-    </a>
-
 </div>
 
   </div>
 </div>
 
-<script>
+<br>
+<div id="graphcomment"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  /* - - - CONFIGURATION VARIABLES - - - */
+
+  // make sure the id is yours
+  window.gc_params = {
+    graphcomment_id: 'scires',
+
+    // if your website has a fixed header, indicate it's height in pixels
+    fixed_header_height: 0,
+  };
+
+  /* - - - DON'T EDIT BELOW THIS LINE - - - */
+
+  
+  (function() {
+    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+    gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+  })();
+
 var modal = document.getElementById("Menu");
 var btn = document.getElementById("open");
 var span = document.getElementsByClassName("close")[0];
@@ -420,7 +391,7 @@ function darker() {
   }
 }
 function onload() {
-  document.title = "SciRes Sophomores";
+  document.title = "SciRes Sophomores - Christopher";
   if ( sessionStorage.getItem('cc') == 'dark') {
     document.body.classList.add("dark-mode");
   }
